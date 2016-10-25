@@ -22,7 +22,7 @@ def sd(xs):
 
 def skewness(xs):
     """
-    Skewness measures asymetry in the distribution of the given sample
+    Skewness measures asymmetry in the distribution of the given sample
     """
     n = len(xs)
     xbar = mean(xs)

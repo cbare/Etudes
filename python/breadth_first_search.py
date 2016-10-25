@@ -1,17 +1,22 @@
 """
 Graph search
 """
-from collections import deque, defaultdict
-import io
+from collections import deque
 import random
 
 class Node:
-    def __init__(self, value, neighbors=None):
+    def __init__(self, value, edges=None):
         self.value = value
-        self.neighbors = [] if neighbors is None else neighbors
+        self.edges = [] if edges is None else edges
 
     def __repr__(self):
         return "Node('%s')" % str(self.value)
+
+class Edge:
+    def __init__(self, fr, to, weight):
+        self.fr = fr
+        self.to = to
+        self.weight = weight
 
 def get_path(backlinks, node):
     path = []
@@ -32,11 +37,11 @@ def breadth_first_search(start, target):
         node = q.popleft()
         if node.value == target:
             return node, get_path(backlinks, node)
-        for neighbor in node.neighbors:
-            if neighbor not in visited:
-                q.append(neighbor)
-                visited.add(neighbor)
-                backlinks[neighbor] = node
+        for edge in node.edges:
+            if edge.to not in visited:
+                q.append(edge.to)
+                visited.add(edge.to)
+                backlinks[edge.to] = node
     else:
         raise ValueError("Target %s not found" % str(target))
 
@@ -47,6 +52,7 @@ def select(weights):
         s += w
         if r <= s:
             return k
+    raise RuntimeError("select WTF from %s" % weights)
 
 def harmonic_series(n):
     s = 0.0
@@ -54,18 +60,25 @@ def harmonic_series(n):
         s += 1.0/i
     return s
 
+def attachment_likelihood(nodes):
+    """
+    preferentially attach to nodes with more edges, but at a
+    decreasing rate for each additional connection.
+    """
+    return [harmonic_series(len(n.edges)) for n in nodes]
+
 def generate_random_graph(values):
     nodes = []
     for v in values:
         node = Node(v)
         if len(nodes) > 0:
             p = 1.0
-            while p > 0:
-                i = select([harmonic_series(len(n.neighbors)) for n in nodes])
-                if nodes[i] not in node.neighbors:
-                    node.neighbors.append(nodes[i])
-                    nodes[i].neighbors.append(node)
-                p = p / 2
+            nodes_remaining = list(nodes)
+            while p > 0 and len(nodes_remaining)>0:
+                i = select(attachment_likelihood(nodes_remaining))
+                neighbor = nodes_remaining.pop(i)
+                node.edges.append(Edge(node, neighbor, weight=random.random()))
+                p = p * 2/3
                 if random.random() >= p:
                     break
         nodes.append(node)
@@ -75,8 +88,17 @@ letters = "abcdefghijklmnopqrstuvwxyz"
 g = generate_random_graph(letters)
 for l in letters:
     node = g[l]
-    print(node, ':', ','.join(str(n.value) for n in node.neighbors))
+    print(node, ':', ','.join(str(e.to.value) for e in node.edges))
 
-target, path = breadth_first_search(g['a'],'z')
+target, path = breadth_first_search(g['z'],'a')
 print(target,path)
+
+nv = 1000
+g = generate_random_graph(range(nv))
+print("\ngenerated random graph of size %d"%nv)
+target, path = breadth_first_search(g[nv-1],0)
+print(target,path)
+
+
+
 
