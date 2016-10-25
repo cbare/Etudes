@@ -19,6 +19,7 @@ class Edge:
         self.to = to
         self.weight = weight
 
+
 def get_path(backlinks, node):
     path = []
     path_node = node
@@ -49,32 +50,31 @@ def breadth_first_search(start, target):
 
 def depth_first_search(node, target):
     visited = set([node])
-    back = {node:None}
-
-    def reconstruct_path(node):
-        path = []
-        while node is not None:
-            path.append(node)
-            node = back[node]
-        return list(reversed(path))
+    backlinks = {node:None}
 
     def dfsr(node, target):
         if node.value == target:
             return node
         for edge in node.edges:
             if edge.to not in visited:
-                back[edge.to] = node
+                backlinks[edge.to] = node
                 target = dfsr(edge.to, target)
                 if target is not None:
                     return target
         return None
 
     target = dfsr(node, target)
-    path = reconstruct_path(target)
+    path = get_path(backlinks, target)
     return target, path
 
 
+##------------------------------------------------------------
+## Generate random graphs
+##------------------------------------------------------------
 def select(weights):
+    """
+    select a node with probability proportional to its "weight"
+    """
     r = random.random() * sum(weights)
     s = 0.0
     for k,w in enumerate(weights):
@@ -107,16 +107,20 @@ def generate_random_graph(values):
         nodes.append(node)
     return {node.value:node for node in nodes}
 
+
+##------------------------------------------------------------
+## Testing
+##------------------------------------------------------------
 letters = "abcdefghijklmnopqrstuvwxyz"
 g = generate_random_graph(letters)
 for l in letters:
     node = g[l]
     print(node, ':', ','.join(str(e.to.value) for e in node.edges))
 target, path = breadth_first_search(g['z'], 'a')
-print(target,path)
+print("bfs found target:", target,path)
 
 target,path = depth_first_search(g['z'], 'a')
-print("found target:", target, path)
+print("dfs found target:", target, path)
 
 nv = 1000
 g = generate_random_graph(range(nv))
