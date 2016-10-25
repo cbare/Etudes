@@ -2,6 +2,7 @@
 Graph search
 """
 from collections import deque
+from math import log
 import random
 
 class Node:
@@ -45,6 +46,34 @@ def breadth_first_search(start, target):
     else:
         raise ValueError("Target %s not found" % str(target))
 
+
+def depth_first_search(node, target):
+    visited = set([node])
+    back = {node:None}
+
+    def reconstruct_path(node):
+        path = []
+        while node is not None:
+            path.append(node)
+            node = back[node]
+        return list(reversed(path))
+
+    def dfsr(node, target):
+        if node.value == target:
+            return node
+        for edge in node.edges:
+            if edge.to not in visited:
+                back[edge.to] = node
+                target = dfsr(edge.to, target)
+                if target is not None:
+                    return target
+        return None
+
+    target = dfsr(node, target)
+    path = reconstruct_path(target)
+    return target, path
+
+
 def select(weights):
     r = random.random() * sum(weights)
     s = 0.0
@@ -54,18 +83,12 @@ def select(weights):
             return k
     raise RuntimeError("select WTF from %s" % weights)
 
-def harmonic_series(n):
-    s = 0.0
-    for i in range(1,(n+1)):
-        s += 1.0/i
-    return s
-
 def attachment_likelihood(nodes):
     """
     preferentially attach to nodes with more edges, but at a
     decreasing rate for each additional connection.
     """
-    return [harmonic_series(len(n.edges)) for n in nodes]
+    return [log(len(n.edges)+1)+1.0 for n in nodes]
 
 def generate_random_graph(values):
     nodes = []
@@ -89,9 +112,11 @@ g = generate_random_graph(letters)
 for l in letters:
     node = g[l]
     print(node, ':', ','.join(str(e.to.value) for e in node.edges))
-
-target, path = breadth_first_search(g['z'],'a')
+target, path = breadth_first_search(g['z'], 'a')
 print(target,path)
+
+target,path = depth_first_search(g['z'], 'a')
+print("found target:", target, path)
 
 nv = 1000
 g = generate_random_graph(range(nv))
