@@ -19,7 +19,11 @@ A collection of programming problems for learning new languages and practicing c
   * HackerRank
   * [Facebook Code Lab](https://codelab.interviewbit.com/)
   * [Google / How We Hire](https://www.google.com/about/careers/how-we-hire/)
-
+  * Programming Pearls, 2nd Ed., by Jon Bentley
 
 ### Todo
   * page rank
+
+
+
+
