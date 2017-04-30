@@ -52,7 +52,7 @@ def _sin_terms(x):
     """
     generates terms of the series x - (1/3!)x^3 + (1/5!)x^5 - (1/7!)x^7 + ...
     """
-    return (((-1)**(i//2) * prod(x/j for j in range(1,i+2))) for i in count(0,2))
+    return (((-1)**(i//2) * prod(x/j for j in range(1,i+1))) for i in count(1,2))
 
 def sin(radians, epsilon=1e-20):
     """
