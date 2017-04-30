@@ -34,19 +34,28 @@ input in radians.
 0.707...
 >>> sin(5*pi/4)                               # doctest: +ELLIPSIS
 -0.707...
-
+>>> abs(sin(degrees_to_radians(30)) - 0.5) < 1e-15
+True
+>>> abs(sin(degrees_to_radians(60)) - sqrt(3)/2) < 1e-15
+True
 """
 from itertools import count, takewhile
 from functools import reduce
 from operator import mul
 from fractions import Fraction
-from math import pi
+from math import pi, sqrt
 
 def prod(factors):
     """
     Given an iterable of factors, returns their product
     """
     return reduce(mul, factors, 1)
+
+def degrees_to_radians(degrees):
+    """
+    Convert degrees to radians
+    """
+    return degrees * pi / 180.0
 
 def _sin_terms(x):
     """
