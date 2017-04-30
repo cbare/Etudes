@@ -59,13 +59,13 @@ def degrees_to_radians(degrees):
 
 def _sin_terms(x):
     """
-    generates terms of the series x - (1/3!)x^3 + (1/5!)x^5 - (1/7!)x^7 + ...
+    generates terms of the series x - (x^3)/3! + (x^5)/5! - (x^7)/7! + ...
     """
     return (((-1)**(i//2) * prod(x/j for j in range(1,i+1))) for i in count(1,2))
 
 def sin(radians, epsilon=1e-20):
     """
-    sums terms of the series x - (1/3!)x^3 + (1/5!)x^5 - (1/7!)x^7 + ...
+    sums terms of the series x - (x^3)/3! + (x^5)/5! - (x^7)/7! + ...
     up to the point where the magnitude of the term is less than epsilon.
     """
     return sum(takewhile(lambda t: abs(t) > epsilon, _sin_terms(radians)))
