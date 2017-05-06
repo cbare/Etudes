@@ -14,8 +14,10 @@ from math import sqrt, pi, factorial, exp, erf
 
 def mean(a):
     if isinstance(a, Sequence):
+        ## this is a lot faster, if we have a sequence with a __len__ method
         return sum(a)/float(len(a))
     else:
+        ## works for generators or any iterable
         s = n = 0
         for x in a:
             s += x
