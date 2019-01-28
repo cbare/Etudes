@@ -20,10 +20,13 @@ A collection of programming problems for learning new languages and practicing c
   * [Facebook Code Lab](https://codelab.interviewbit.com/)
   * [Google / How We Hire](https://www.google.com/about/careers/how-we-hire/)
   * Programming Pearls, 2nd Ed., by Jon Bentley
+  * [Ruby Quiz](http://rubyquiz.com/)
 
 ### Todo
   * page rank
 
+### Inspiration
+  * Peter Norvig's [Pytudes](https://github.com/norvig/pytudes)
 
 
 
