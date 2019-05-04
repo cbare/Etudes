@@ -17,7 +17,7 @@ drugs <- c('insulin', 'metformin', 'liraglutide', 'empagliflozin', 'sitagliptin'
 n <- 7
 patient_ids = replicate(n, paste(sample(0:9, 8, replace=TRUE), collapse=''))
 dt <- data.table(
-    patient_id=sample(patient_ids, n, replace=TRUE),
+    patient_id=patient_ids,
     meds=sample(drugs, n, replace=TRUE))
 
 message('\n\n--------- original data table ---------')
@@ -37,7 +37,10 @@ print(dt)
 s = strsplit(dt$meds, ' and ', fixed=TRUE)
 
 # We'll make clever use of the lengths of those vectors to pad out the new data table.
-dt2 <- dt[rep(1:.N, lengths(s)), c(.(patient_id=patient_id, medication = unlist(s)))][order(patient_id, medication)]
+dt2 <- dt[
+        rep(1:.N, lengths(s)),
+        .(patient_id=patient_id, medication = unlist(s))
+    ][order(patient_id, medication)]
 
 message('\n\n--------- improved data table ---------')
 print(dt2)

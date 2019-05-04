@@ -67,3 +67,6 @@ target/
 # virtualenv
 venv/
 ENV/
+
+.DS_Store
+.mypy_cache/
