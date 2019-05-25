@@ -141,6 +141,33 @@ def threeSumClosest(x: List[int], target: int) -> int:
 
     return soln
 
+
+def fourSum(xs: List[int], target: int) -> List[List[int]]:
+    xs = sorted(xs)
+    solns = set()
+    
+    for h in range(0, len(xs)-3):
+        for k in range(h+3, len(xs)):
+            i = h+1
+            j = k-1
+            
+            while j>i:
+            
+                s = xs[h] + xs[i] + xs[j] + xs[k]
+                if s==target:
+                    solns.add((xs[h], xs[i], xs[j], xs[k]))
+                    i += 1
+                    j -= 1
+
+                elif s<target:
+                    i+=1
+                else:
+                    j-=1
+                
+    return sorted(solns)
+
+
+
 def test_threeSumCubic():
     assert threeSumCubic([0,0]) == []
     assert threeSumCubic([0,0,0]) == [(0,0,0)]
@@ -169,3 +196,7 @@ def test_threeSumClosest():
     assert threeSumClosest([1,6,9,14,16,70], 81) == 80
     assert threeSumClosest([0,2,1,-3], 1) == 0
     assert threeSumClosest([-1,2,1,-4], 1) == 2
+
+def test_fourSum():
+    assert fourSum([-1,2,2,-5,0,-1,4], 3) == [(-5,2,2,4), (-1,0,2,2)]
+    assert fourSum([1,0,-1,0,-2,2], 0) == [(-2,-1,1,2), (-2,0,0,2), (-1,0,0,1)]
