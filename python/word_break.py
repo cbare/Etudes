@@ -12,7 +12,9 @@ From: http://thenoisychannel.com/2011/08/08/retiring-a-great-interview-problem
 See also: http://stackoverflow.com/questions/21273505/memoization-algorithm-time-complexity
 """
 
-DICTIONARY = """bed bath and beyond bat bad on be an a at hand ton bean zz zzz zxzz""".split()
+DICTIONARY = set("""
+    bed bath and beyond bat bad on be an a at hand ton bean yon hat zz zzz zxzz
+""".split())
 
 def is_word(s):
     return s in DICTIONARY
@@ -44,6 +46,18 @@ def word_break(s):
                 return words + [suffix]
     return None
 
-print(word_break("bedbathandbeyond"))
-print(word_break("zzzxzzzzzxzzzzzzxzzzzzzxzzzzzxzzzzzxzzzxzzzxzz"))
+def test():
+    print(word_break("bedbathandbeyond"))
+    print(word_break("zzzxzzzzzxzzzzzzxzzzzzzxzzzzzxzzzzzxzzzxzzzxzz"))
+    print(word_break('bedbathandbe'))
+    print(word_break('beanhat'))
 
+def test_monster_string():
+    import random, sys
+    sys.setrecursionlimit(10000)
+    monster_string = ''.join(random.choices(tuple(DICTIONARY), k=1000))
+    print(word_break(monster_string))
+
+if __name__ == "__main__":
+    test()
+    # test_monster_string()
