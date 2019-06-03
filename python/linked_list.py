@@ -9,12 +9,13 @@ class Node:
         self.next = next
 
     def __repr__(self):
-        return "Node("+str(self.value)+","+("None" if self.next is None else str(self.next)) + ")"
+        return str(self.value) + "," + (str(self.next) if self.next else '')
 
 def make_linked_list(lst):
     """
     Turn a Python list (or any iterable) into a linked list
     """
+    if len(lst)==0: return None
     iterator = iter(lst)
     head = Node(next(iterator))
     tail = head
@@ -61,3 +62,43 @@ def swap_pairs(head: Node) -> Node:
         return b
 
 print(swap_pairs(my_list))
+
+
+
+def reverseKGroup(head: Node, k: int) -> Node:
+    """
+    Given a linked list, reverse groups of length k
+    so reverseKGroup(make_linked_list([1,2,3,4,5]), k=2) == make_linked_list([2,1,4,3,5])
+    """
+    i = k
+    current = head
+    prev = None
+    nxt = None
+
+    while i > 0 and current:
+        nxt = current.next
+        if prev:
+            current.next = prev
+        prev = current
+        current = nxt
+        i -= 1
+
+    if head:
+        head.next = reverseKGroup(nxt, k) if nxt else None
+
+    return prev
+
+l = make_linked_list([])
+print(reverseKGroup(l, k=2))
+
+l = make_linked_list([1])
+print(reverseKGroup(l, k=2))
+
+l = make_linked_list([1,2])
+print(reverseKGroup(l, k=2))
+
+l = make_linked_list([1,2,3,4,5])
+print(reverseKGroup(l, k=2))
+
+l = make_linked_list([1,2,3,4,5,6,7,8,9])
+print(reverseKGroup(l, k=3))
