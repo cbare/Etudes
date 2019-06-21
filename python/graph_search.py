@@ -28,11 +28,13 @@ class Node:
     def __repr__(self):
         return "Node('%s')" % str(self.value)
 
+
 class Edge:
     def __init__(self, fr, to, weight):
         self.fr = fr
         self.to = to
         self.weight = weight
+
 
 def path_to_string(path):
     out = []
@@ -50,9 +52,13 @@ def path_to_string(path):
     return '--'.join(out)
 
 
-def get_path(backlinks, node):
+def get_path(backlinks, target):
+    """
+    Given a dict of backlinks and target node,
+    follow backlinks to root node (whose backlink is None)
+    """
     path = []
-    path_node = node
+    path_node = target
     while path_node is not None:
         path.append(path_node)
         path_node = backlinks.get(path_node, None)
@@ -60,14 +66,18 @@ def get_path(backlinks, node):
 
 
 def depth_first_search(node, target):
-    visited = set([node])
+    """
+    Depth first search implemented recursively
+    """
+
+    # keep backlinks to return path to target node
     backlinks = {node:None}
 
     def dfsr(node, target):
         if node.value == target:
             return node
         for edge in node.edges:
-            if edge.to not in visited:
+            if edge.to not in backlinks:
                 backlinks[edge.to] = node
                 target = dfsr(edge.to, target)
                 if target is not None:
@@ -80,23 +90,20 @@ def depth_first_search(node, target):
 
 
 def breadth_first_search(start, target):
-    visited = set()
-    q = deque()
-    q.append(start)
-    visited.add(start)
-    backlinks = {}
+    q = deque((start,))
+    backlinks = {start: None}
 
     while len(q) > 0:
         node = q.popleft()
         if node.value == target:
             return node, get_path(backlinks, node)
         for edge in node.edges:
-            if edge.to not in visited:
+            if edge.to not in backlinks:
                 q.append(edge.to)
-                visited.add(edge.to)
                 backlinks[edge.to] = node
-    else:
-        raise ValueError("Target %s not found" % str(target))
+
+    # target not found
+    return None, []
 
 
 def dijkstras(node, target):
@@ -134,12 +141,14 @@ def select(weights):
             return k
     raise RuntimeError("select WTF from %s" % weights)
 
+
 def attachment_likelihood(node):
     """
     preferentially attach to nodes with more edges, but at a
     decreasing rate for each additional connection.
     """
     return log(len(node.edges)+1)+1.0
+
 
 def generate_random_graph(values):
     attachment_likelihoods = []
@@ -171,36 +180,34 @@ def generate_random_graph(values):
 ##------------------------------------------------------------
 ## Testing
 ##------------------------------------------------------------
-letters = "abcdefghijklmnopqrstuvwxyz"
-g = generate_random_graph(letters)
-for l in letters:
-    node = g[l]
-    print(node, ':', ','.join(str(e.to.value) for e in node.edges))
+def test():
+    letters = "abcdefghijklmnopqrstuvwxyz"
+    g = generate_random_graph(letters)
+    for l in letters:
+        node = g[l]
+        print(node, ':', ','.join(str(e.to.value) for e in node.edges))
 
-target, path = breadth_first_search(g['z'], 'a')
-print("bfs found target:", target,path)
+    target, path = breadth_first_search(g['z'], 'a')
+    print("bfs found target:", target, path)
 
-target,path = depth_first_search(g['z'], 'a')
-print("dfs found target:", target, path)
+    target,path = depth_first_search(g['z'], 'a')
+    print("dfs found target:", target, path)
 
-nv = 5000
+    nv = 5000
 
-start_time = time.time()
-g = generate_random_graph(range(nv))
-print("\ngenerated random graph of size %d"%nv)
-print("--- %0.6f seconds ---" % (time.time() - start_time))
+    start_time = time.time()
+    g = generate_random_graph(range(nv))
+    print("\ngenerated random graph of size %d"%nv)
+    print("--- %0.6f seconds ---" % (time.time() - start_time))
 
-start_time = time.time()
-target, path = breadth_first_search(g[nv-1],0)
-print("\nbfs found:", target, path)
-print("--- %0.6f seconds ---" % (time.time() - start_time))
+    start_time = time.time()
+    target, path = breadth_first_search(g[nv-1],0)
+    print("\nbfs found:", target, path)
+    print("--- %0.6f seconds ---" % (time.time() - start_time))
 
-start_time = time.time()
-target, cost, path = dijkstras(g[nv-1], 0)
-print("\ndijkstra's found:", target, "%0.2f"%cost, path)
-print("--- %0.6f seconds ---" % (time.time() - start_time))
+    start_time = time.time()
+    target, cost, path = dijkstras(g[nv-1], 0)
+    print("\ndijkstra's found:", target, "%0.2f"%cost, path)
+    print("--- %0.6f seconds ---" % (time.time() - start_time))
 
-print("\n", path_to_string(path))
-
-
-
+    print("\n", path_to_string(path))
