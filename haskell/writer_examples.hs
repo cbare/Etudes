@@ -1,4 +1,4 @@
--- Monadic Writer examples from LYAH chapt 14
+-- Monadic Writer examples from LYAH chapt 13
 
 -- ex: runhaskell --ghc-arg="-package mtl" haskell/log_writer.hs
 import Control.Monad.Writer
