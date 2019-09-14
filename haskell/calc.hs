@@ -7,7 +7,11 @@ import Data.Char
 
 data Token = TokOp Operator
            | TokIdent String
-           | TokNum Int
+           | TokNum Double
+           | TokAssign
+           | TokLParen
+           | TokRParen
+           | TokEnd
     deriving (Show, Eq)
 
 data Expression
@@ -35,6 +39,9 @@ tokenize (c : cs)
     | elem c "+-*/" = TokOp (operator c) : tokenize cs
     | isDigit c     = number c cs
     | isAlpha c     = identifier c cs
+    | c == '='      = TokAssign : tokenize cs
+    | c == '('      = TokLParen : tokenize cs
+    | c == ')'      = TokRParen : tokenize cs
     | isSpace c     = tokenize cs
     | otherwise     = error $ "Cannot tokenize " ++ [c]
 
