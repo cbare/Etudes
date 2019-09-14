@@ -146,13 +146,40 @@ accept [] = error "Nothing to accept"
 accept (t:ts) = ts
 
 
-evaluate :: Expression -> Double
-evaluate = undefined
+-- Evaluator ---------------------------------------------------------
+
+evaluate :: Tree -> Double
+evaluate (SumNode op larg rarg) =
+    let l = evaluate larg
+        r = evaluate rarg
+     in case op of
+        Plus  -> l + r
+        Minus -> l - r
+evaluate (ProdNode op larg rarg) =
+    let l = evaluate larg
+        r = evaluate rarg
+     in case op of
+        Times -> l * r
+        Div   -> l / r
+evaluate (UnaryNode op arg) =
+    let x = evaluate arg
+     in case op of
+        Plus -> x
+        Minus -> -x
+evaluate (NumNode x) = x
+
+-- dummy implementation
+evaluate (AssignNode str tree) = evaluate tree
+
+-- dummy implementation
+evaluate (VarNode str) = 0
+
+
 
 main :: IO ()
 main = do
     putStrLn "Calc - Enter an expression to be evaluated:"
     line <- getLine
     unless (line == ":q") $ do
-        print $ (parse . tokenize) line
+        (print . evaluate . parse . tokenize) line
         main
