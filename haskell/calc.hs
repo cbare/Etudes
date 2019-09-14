@@ -21,6 +21,7 @@ opToChar Minus = '-'
 opToChar Times = '*'
 opToChar Div   = '/'
 
+
 operator :: Char -> Operator
 operator c | c == '+' = Plus
            | c == '-' = Minus
@@ -32,10 +33,22 @@ tokenize :: String -> [Token]
 tokenize [] = []
 tokenize (c : cs) 
     | elem c "+-*/" = TokOp (operator c) : tokenize cs
-    | isDigit c  = TokNum (digitToInt c) : tokenize cs
-    | isAlpha c  = TokIdent [c]          : tokenize cs
-    | isSpace c  = tokenize cs
-    | otherwise  = error $ "Cannot tokenize " ++ [c]
+    | isDigit c     = number c cs
+    | isAlpha c     = identifier c cs
+    | isSpace c     = tokenize cs
+    | otherwise     = error $ "Cannot tokenize " ++ [c]
+
+
+identifier :: Char -> String -> [Token]
+identifier c cs = let (str, cs') = span isAlphaNum cs in
+                  TokIdent (c:str) : tokenize cs'
+
+
+number :: Char -> String -> [Token]
+number c cs =
+   let (digs, cs') = span isDigit cs in
+   TokNum (read (c : digs)) : tokenize cs'
+
 
 parse :: [Token] -> Expression
 parse = undefined
