@@ -1,7 +1,9 @@
 -- State monad example
 
 -- see: https://vaibhavsagar.com/blog/2016/06/17/haskell-state/
--- ex: runhaskell --ghc-arg="-package random" haskell/state.hs 
+
+-- ex: runhaskell --ghc-arg="-package random" haskell/state.hs
+
 {-# language InstanceSigs #-}
 
 import System.Random
