@@ -2,7 +2,7 @@
 
 -- from Bartosz Milewski's Basics of Haskell tutorial
 -- https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell
-import Control.Monad (unless)
+import Control.Monad (mapM_)
 import Data.Char
 import Data.List (dropWhileEnd)
 import qualified Data.Map as Map
@@ -219,9 +219,18 @@ main = do
 
 loop symbols = do
     line <- prompt "> "
-    unless (line == ":q") $
-        let tree = (parse . tokenize) line
-            (val, symbols') = evaluate tree symbols
-         in do
-            print val
-            loop symbols'
+    line <- return (trim line)
+    case line of
+        "" -> do
+            loop symbols
+        ":s" -> do
+            mapM_ print (Map.toList symbols)
+            loop symbols
+        ":q" -> do
+            putStrLn "Bye!"
+        otherwise -> do
+            let tree = (parse . tokenize) line
+                (val, symbols') = evaluate tree symbols
+             in do
+                print val
+                loop symbols'
