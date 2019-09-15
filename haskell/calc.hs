@@ -4,6 +4,11 @@
 -- https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell
 import Control.Monad (unless)
 import Data.Char
+import Data.List (dropWhileEnd)
+import qualified Data.Map as Map
+
+
+type SymTab = Map.Map String Double
 
 data Token = TokOp Operator
            | TokIdent String
@@ -39,6 +44,9 @@ operator c | c == '+' = Plus
            | c == '-' = Minus
            | c == '*' = Times
            | c == '/' = Div
+
+
+trim = dropWhileEnd isSpace . dropWhile isSpace
 
 
 -- Tokenizer ---------------------------------------------------------
@@ -148,38 +156,63 @@ accept (t:ts) = ts
 
 -- Evaluator ---------------------------------------------------------
 
-evaluate :: Tree -> Double
-evaluate (SumNode op larg rarg) =
-    let l = evaluate larg
-        r = evaluate rarg
-     in case op of
-        Plus  -> l + r
-        Minus -> l - r
-evaluate (ProdNode op larg rarg) =
-    let l = evaluate larg
-        r = evaluate rarg
-     in case op of
-        Times -> l * r
-        Div   -> l / r
-evaluate (UnaryNode op arg) =
-    let x = evaluate arg
-     in case op of
-        Plus -> x
-        Minus -> -x
-evaluate (NumNode x) = x
+evaluate :: Tree -> SymTab -> (Double, SymTab)
 
--- dummy implementation
-evaluate (AssignNode str tree) = evaluate tree
+evaluate (SumNode op larg rarg) symbols =
+    let (l, symbols')  = evaluate larg symbols
+        (r, symbols'') = evaluate rarg symbols'
+     in case op of
+        Plus  -> (l + r, symbols'')
+        Minus -> (l - r, symbols'')
 
--- dummy implementation
-evaluate (VarNode str) = 0
+evaluate (ProdNode op larg rarg) symbols =
+    let (l, symbols')  = evaluate larg symbols
+        (r, symbols'') = evaluate rarg symbols'
+     in case op of
+        Times -> (l * r, symbols'')
+        Div   -> (l / r, symbols'')
+
+evaluate (UnaryNode op arg) symbols =
+    let (x, symbols') = evaluate arg symbols
+     in case op of
+        Plus ->  ( x, symbols')
+        Minus -> (-x, symbols')
+
+evaluate (NumNode x) symbols = (x, symbols)
+
+evaluate (AssignNode str tree) symbols =
+    let (val, symbols')  = evaluate tree symbols
+        (_  , symbols'') = assign str val symbols
+     in (val, symbols'')
+
+evaluate (VarNode str) symbols = lookupSymbol str symbols
+
+
+lookupSymbol :: String -> SymTab -> (Double, SymTab)
+lookupSymbol str symbols = 
+    case Map.lookup str symbols of
+      Just val -> (val, symbols)
+      Nothing -> error $ "Undefined variable " ++ str
+
+
+assign :: String -> Double -> SymTab -> (Double, SymTab)
+assign str val symbols = 
+    let symbols' = Map.insert str val symbols
+    in (val, symbols')
 
 
 
 main :: IO ()
 main = do
+    loop (Map.fromList [("pi", pi), ("e", exp 1)])
+
+
+loop symbols = do
     putStrLn "Calc - Enter an expression to be evaluated:"
     line <- getLine
-    unless (line == ":q") $ do
-        (print . evaluate . parse . tokenize) line
-        main
+    unless (line == ":q") $
+        let tree = (parse . tokenize) line
+            (val, symbols') = evaluate tree symbols
+         in do
+            print val
+            loop symbols'
