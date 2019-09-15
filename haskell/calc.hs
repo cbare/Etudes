@@ -6,6 +6,7 @@ import Control.Monad (unless)
 import Data.Char
 import Data.List (dropWhileEnd)
 import qualified Data.Map as Map
+import System.IO (hFlush, stdout)
 
 
 type SymTab = Map.Map String Double
@@ -46,7 +47,15 @@ operator c | c == '+' = Plus
            | c == '/' = Div
 
 
+trim :: String -> String
 trim = dropWhileEnd isSpace . dropWhile isSpace
+
+
+prompt :: String -> IO String
+prompt text = do
+    putStr text
+    hFlush stdout
+    getLine
 
 
 -- Tokenizer ---------------------------------------------------------
@@ -189,14 +198,14 @@ evaluate (VarNode str) symbols = lookupSymbol str symbols
 
 
 lookupSymbol :: String -> SymTab -> (Double, SymTab)
-lookupSymbol str symbols = 
+lookupSymbol str symbols =
     case Map.lookup str symbols of
       Just val -> (val, symbols)
       Nothing -> error $ "Undefined variable " ++ str
 
 
 assign :: String -> Double -> SymTab -> (Double, SymTab)
-assign str val symbols = 
+assign str val symbols =
     let symbols' = Map.insert str val symbols
     in (val, symbols')
 
@@ -204,12 +213,12 @@ assign str val symbols =
 
 main :: IO ()
 main = do
+    putStrLn "Calc - Enter an expression to be evaluated:"
     loop (Map.fromList [("pi", pi), ("e", exp 1)])
 
 
 loop symbols = do
-    putStrLn "Calc - Enter an expression to be evaluated:"
-    line <- getLine
+    line <- prompt "> "
     unless (line == ":q") $
         let tree = (parse . tokenize) line
             (val, symbols') = evaluate tree symbols
