@@ -58,6 +58,10 @@ prompt text = do
     getLine
 
 
+format :: (String, Double) -> String
+format (k, v) = k ++ " = " ++ (show v)
+
+
 -- Tokenizer ---------------------------------------------------------
 
 tokenize :: String -> [Token]
@@ -224,7 +228,7 @@ loop symbols = do
         "" -> do
             loop symbols
         ":s" -> do
-            mapM_ print (Map.toList symbols)
+            mapM_ (putStrLn . format) (Map.toList symbols)
             loop symbols
         ":q" -> do
             putStrLn "Bye!"
