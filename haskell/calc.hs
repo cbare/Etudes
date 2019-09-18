@@ -169,49 +169,78 @@ accept (t:ts) = ts
 
 -- Evaluator ---------------------------------------------------------
 
-evaluate :: Tree -> SymTab -> (Double, SymTab)
+newtype Evaluator a = Ev (Either String a)
 
-evaluate (SumNode op larg rarg) symbols =
-    let (l, symbols')  = evaluate larg symbols
-        (r, symbols'') = evaluate rarg symbols'
-     in case op of
-        Plus  -> (l + r, symbols'')
-        Minus -> (l - r, symbols'')
 
-evaluate (ProdNode op larg rarg) symbols =
-    let (l, symbols')  = evaluate larg symbols
-        (r, symbols'') = evaluate rarg symbols'
-     in case op of
-        Times -> (l * r, symbols'')
-        Div   -> (l / r, symbols'')
+instance Functor Evaluator where
+    fmap f (Ev ev) =
+        case ev of
+          Left msg -> Ev (Left msg)
+          Right v -> Ev (Right (f v))
 
-evaluate (UnaryNode op arg) symbols =
-    let (x, symbols') = evaluate arg symbols
-     in case op of
-        Plus ->  ( x, symbols')
-        Minus -> (-x, symbols')
 
-evaluate (NumNode x) symbols = (x, symbols)
+instance Applicative Evaluator where
+    --pure :: a -> f a
+    pure v = Ev (Right v)
 
-evaluate (AssignNode str tree) symbols =
-    let (val, symbols')  = evaluate tree symbols
-        (_  , symbols'') = assign str val symbols
-     in (val, symbols'')
+    --(<*>) :: f (a -> b) -> f a -> f b
+    (<*>) (Ev (Right k)) (Ev (Right v))  = (Ev (Right (k v)))
+    (<*>) (Ev (Right k)) (Ev (Left msg)) = (Ev (Left msg))
+    (<*>) (Ev (Left msg)) _              = (Ev (Left msg))
+
+
+instance Monad Evaluator where
+    (Ev ev) >>= k =
+        case ev of
+          Left msg -> Ev (Left msg)
+          Right v -> k v
+    return v = Ev (Right v)
+    fail msg = Ev (Left msg)
+
+
+evaluate :: Tree -> SymTab -> Evaluator (Double, SymTab)
+
+evaluate (SumNode op larg rarg) symbols = do
+    (l, symbols')  <- evaluate larg symbols
+    (r, symbols'') <- evaluate rarg symbols'
+    case op of
+        Plus  -> return (l + r, symbols'')
+        Minus -> return (l - r, symbols'')
+
+evaluate (ProdNode op larg rarg) symbols = do
+    (l, symbols')  <- evaluate larg symbols
+    (r, symbols'') <- evaluate rarg symbols'
+    case op of
+        Times -> return (l * r, symbols'')
+        Div   -> return (l / r, symbols'')
+
+evaluate (UnaryNode op arg) symbols = do
+    (x, symbols') <- evaluate arg symbols
+    case op of
+        Plus  -> return ( x, symbols')
+        Minus -> return (-x, symbols')
+
+evaluate (NumNode x) symbols = return (x, symbols)
+
+evaluate (AssignNode str tree) symbols = do
+    (val, symbols')  <- evaluate tree symbols
+    (_  , symbols'') <- assign str val symbols
+    return (val, symbols'')
 
 evaluate (VarNode str) symbols = lookupSymbol str symbols
 
 
-lookupSymbol :: String -> SymTab -> (Double, SymTab)
-lookupSymbol str symbols =
+lookupSymbol :: String -> SymTab -> Evaluator (Double, SymTab)
+lookupSymbol str symbols = do
     case Map.lookup str symbols of
-      Just val -> (val, symbols)
-      Nothing -> error $ "Undefined variable " ++ str
+      Just val -> return (val, symbols)
+      Nothing  -> fail ("Undefined variable " ++ str)
 
 
-assign :: String -> Double -> SymTab -> (Double, SymTab)
+assign :: String -> Double -> SymTab -> Evaluator (Double, SymTab)
 assign str val symbols =
     let symbols' = Map.insert str val symbols
-    in (val, symbols')
+    in return (val, symbols')
 
 
 
@@ -234,7 +263,10 @@ loop symbols = do
             putStrLn "Bye!"
         otherwise -> do
             let tree = (parse . tokenize) line
-                (val, symbols') = evaluate tree symbols
-             in do
-                print val
-                loop symbols'
+             in case (evaluate tree symbols) of
+                (Ev (Right (val, symbols'))) -> do
+                    print val
+                    loop symbols'
+                (Ev (Left msg)) -> do
+                    putStrLn $ "Error: " ++ msg
+                    loop symbols
