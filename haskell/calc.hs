@@ -22,7 +22,13 @@ data Token = TokOp Operator
 
 data Expression
 
-data Operator = Plus | Minus | Times | Div deriving (Read, Show, Eq)
+data Operator = Plus | Minus | Times | Div deriving (Eq)
+
+instance Show Operator where
+    show Plus  = " + "
+    show Minus = " - "
+    show Times = " * "
+    show Div   = " / "
 
 data Tree = SumNode Operator Tree Tree
           | ProdNode Operator Tree Tree
@@ -30,14 +36,14 @@ data Tree = SumNode Operator Tree Tree
           | UnaryNode Operator Tree
           | NumNode Double
           | VarNode String
-  deriving Show
 
-
-opToChar :: Operator -> Char
-opToChar Plus  = '+'
-opToChar Minus = '-'
-opToChar Times = '*'
-opToChar Div   = '/'
+instance Show Tree where
+    show (VarNode str)      = str
+    show (NumNode x)        = show x
+    show (UnaryNode op t)   = "(" ++ (show op) ++ show t ++ ")"
+    show (AssignNode str t) = "(" ++ str ++ " = " ++ show t ++ ")"
+    show (ProdNode op t s)  = "(" ++ show t ++ (show op) ++ show s ++ ")"
+    show (SumNode op t s)   = "(" ++ show t ++ (show op) ++ show s ++ ")"
 
 
 operator :: Char -> Operator
