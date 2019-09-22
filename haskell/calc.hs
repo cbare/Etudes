@@ -175,78 +175,77 @@ accept (t:ts) = ts
 
 -- Evaluator ---------------------------------------------------------
 
-newtype Evaluator a = Ev (Either String a)
+newtype Evaluator a = Ev (SymTab -> (a, SymTab))
 
 
 instance Functor Evaluator where
-    fmap f (Ev ev) =
-        case ev of
-          Left msg -> Ev (Left msg)
-          Right v -> Ev (Right (f v))
+    fmap f (Ev act) = Ev $ \symbols ->
+        let (x, symbols') = act symbols
+         in (f x, symbols')
 
 
 instance Applicative Evaluator where
     --pure :: a -> f a
-    pure v = Ev (Right v)
+    pure x = Ev $ \symbols -> (x, symbols)
 
     --(<*>) :: f (a -> b) -> f a -> f b
-    (<*>) (Ev (Right k)) (Ev (Right v))  = (Ev (Right (k v)))
-    (<*>) (Ev (Right k)) (Ev (Left msg)) = (Ev (Left msg))
-    (<*>) (Ev (Left msg)) _              = (Ev (Left msg))
+    (<*>) (Ev act') (Ev act'') = Ev $ \symbols ->
+        let (f, symbols')  = act'  symbols
+            (x, symbols'') = act'' symbols'
+         in (f x, symbols'')
 
 
 instance Monad Evaluator where
-    (Ev ev) >>= k =
-        case ev of
-          Left msg -> Ev (Left msg)
-          Right v -> k v
-    return v = Ev (Right v)
-    fail msg = Ev (Left msg)
+    (Ev act) >>= k = Ev $ \symbols ->
+        let (x, symbols') = act symbols
+            (Ev act')     = k x
+         in act' symbols'
+
+    return x = Ev $ \symbols -> (x, symbols)
 
 
-evaluate :: Tree -> SymTab -> Evaluator (Double, SymTab)
+evaluate :: Tree -> Evaluator Double
 
-evaluate (SumNode op larg rarg) symbols = do
-    (l, symbols')  <- evaluate larg symbols
-    (r, symbols'') <- evaluate rarg symbols'
+evaluate (SumNode op larg rarg) = do
+    l <- evaluate larg
+    r <- evaluate rarg
     case op of
-        Plus  -> return (l + r, symbols'')
-        Minus -> return (l - r, symbols'')
+        Plus  -> return (l + r)
+        Minus -> return (l - r)
 
-evaluate (ProdNode op larg rarg) symbols = do
-    (l, symbols')  <- evaluate larg symbols
-    (r, symbols'') <- evaluate rarg symbols'
+evaluate (ProdNode op larg rarg) = do
+    l <- evaluate larg
+    r <- evaluate rarg
     case op of
-        Times -> return (l * r, symbols'')
-        Div   -> return (l / r, symbols'')
+        Times -> return (l * r)
+        Div   -> return (l / r)
 
-evaluate (UnaryNode op arg) symbols = do
-    (x, symbols') <- evaluate arg symbols
+evaluate (UnaryNode op arg) = do
+    x <- evaluate arg
     case op of
-        Plus  -> return ( x, symbols')
-        Minus -> return (-x, symbols')
+        Plus  -> return x
+        Minus -> return (-x)
 
-evaluate (NumNode x) symbols = return (x, symbols)
+evaluate (NumNode x) = return x
 
-evaluate (AssignNode str tree) symbols = do
-    (val, symbols')  <- evaluate tree symbols
-    (_  , symbols'') <- assign str val symbols
-    return (val, symbols'')
+evaluate (AssignNode str tree) = do
+    val  <- evaluate tree
+    assign str val
 
-evaluate (VarNode str) symbols = lookupSymbol str symbols
+evaluate (VarNode str) = lookupSymbol str
 
 
-lookupSymbol :: String -> SymTab -> Evaluator (Double, SymTab)
-lookupSymbol str symbols = do
+lookupSymbol :: String -> Evaluator Double
+lookupSymbol str = Ev $ \symbols ->
     case Map.lookup str symbols of
-      Just val -> return (val, symbols)
-      Nothing  -> fail ("Undefined variable " ++ str)
+      Just val -> (val, symbols)
+      Nothing  -> error $ "Undefined variable " ++ str
 
 
-assign :: String -> Double -> SymTab -> Evaluator (Double, SymTab)
-assign str val symbols =
+assign :: String -> Double -> Evaluator Double
+assign str val = Ev $ \symbols ->
     let symbols' = Map.insert str val symbols
-    in return (val, symbols')
+     in (val, symbols')
 
 
 
@@ -269,10 +268,8 @@ loop symbols = do
             putStrLn "Bye!"
         otherwise -> do
             let tree = (parse . tokenize) line
-             in case (evaluate tree symbols) of
-                (Ev (Right (val, symbols'))) -> do
-                    print val
-                    loop symbols'
-                (Ev (Left msg)) -> do
-                    putStrLn $ "Error: " ++ msg
-                    loop symbols
+                (Ev act) = evaluate tree
+                (val, symbols') = act symbols
+             in do
+                print val
+                loop symbols'
