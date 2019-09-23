@@ -3,6 +3,7 @@
 -- from Bartosz Milewski's Basics of Haskell tutorial
 -- https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell
 import Control.Monad (mapM_)
+import Control.Monad.State
 import Data.Char
 import Data.List (dropWhileEnd)
 import qualified Data.Map as Map
@@ -175,33 +176,7 @@ accept (t:ts) = ts
 
 -- Evaluator ---------------------------------------------------------
 
-newtype Evaluator a = Ev (SymTab -> (a, SymTab))
-
-
-instance Functor Evaluator where
-    fmap f (Ev act) = Ev $ \symbols ->
-        let (x, symbols') = act symbols
-         in (f x, symbols')
-
-
-instance Applicative Evaluator where
-    --pure :: a -> f a
-    pure x = Ev $ \symbols -> (x, symbols)
-
-    --(<*>) :: f (a -> b) -> f a -> f b
-    (<*>) (Ev act') (Ev act'') = Ev $ \symbols ->
-        let (f, symbols')  = act'  symbols
-            (x, symbols'') = act'' symbols'
-         in (f x, symbols'')
-
-
-instance Monad Evaluator where
-    (Ev act) >>= k = Ev $ \symbols ->
-        let (x, symbols') = act symbols
-            (Ev act')     = k x
-         in act' symbols'
-
-    return x = Ev $ \symbols -> (x, symbols)
+type Evaluator a = State SymTab a
 
 
 evaluate :: Tree -> Evaluator Double
@@ -236,17 +211,18 @@ evaluate (VarNode str) = lookupSymbol str
 
 
 lookupSymbol :: String -> Evaluator Double
-lookupSymbol str = Ev $ \symbols ->
+lookupSymbol str = do
+    symbols <- get
     case Map.lookup str symbols of
-      Just val -> (val, symbols)
+      Just val -> return val
       Nothing  -> error $ "Undefined variable " ++ str
 
 
 assign :: String -> Double -> Evaluator Double
-assign str val = Ev $ \symbols ->
-    let symbols' = Map.insert str val symbols
-     in (val, symbols')
-
+assign str val = do
+    symbols <- get
+    put $ Map.insert str val symbols
+    return val
 
 
 main :: IO ()
@@ -268,8 +244,7 @@ loop symbols = do
             putStrLn "Bye!"
         otherwise -> do
             let tree = (parse . tokenize) line
-                (Ev act) = evaluate tree
-                (val, symbols') = act symbols
+                (val, symbols') = runState (evaluate tree) symbols
              in do
                 print val
                 loop symbols'
