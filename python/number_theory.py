@@ -4,7 +4,7 @@ Number theory functions.
 import sys
 
 from functools import reduce
-from math import sqrt
+from math import sqrt, gcd
 from operator import mul
 
 
@@ -83,3 +83,32 @@ def test_collatz_sequence():
         print(collatz_sequence(n))
 
     print(max(len(collatz_sequence(n)) for n in range(1000)))
+
+
+def euler_phi(n):
+    return sum(gcd(n, k) == 1 for k in range(1, n + 1))
+
+
+def order_g_mod_m(g, m):
+    for x in range(1, m):
+        if pow(g, x, m) == 1:
+            break
+    return x
+
+
+def primitive_roots(m):
+    phi = euler_phi(m)
+    return [g for g in range(2, m) if order_g_mod_m(g, m) == phi]
+
+
+def is_primitive_root(a, m):
+    return order_g_mod_m(a, m) == euler_phi(m)
+
+
+def primitive_root_permutations(m):
+    phi = euler_phi(m)
+
+    return [
+        [pow(a, x, m) for x in range(1, m)]
+            for a in range(2, m)
+                if order_g_mod_m(a, m) == phi]
