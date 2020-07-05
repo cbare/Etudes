@@ -4,6 +4,7 @@ Number theory functions.
 import sys
 
 from functools import reduce
+from itertools import count
 from math import sqrt, gcd
 from operator import mul
 
@@ -19,6 +20,39 @@ def is_prime(n):
         if n%m==0:
             return False
     return True
+
+
+def primes_less_than(n):
+    primes = []
+    for m in range(2,n):
+        found_prime = True
+        for p in primes:
+            if p*p > m:
+                break
+            if m % p == 0:
+                found_prime = False
+                break
+        if found_prime:
+            primes.append(m)
+    return primes
+
+
+def primes():
+    """
+    Generate prime numbers
+    """
+    primes = []
+    for n in count(2):
+        found_prime = True
+        for p in primes:
+            if p*p > n:
+                break
+            if n % p == 0:
+                found_prime = False
+                break
+        if found_prime:
+            primes.append(n)
+            yield n
 
 
 def even(n):
