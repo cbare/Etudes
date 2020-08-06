@@ -4,7 +4,7 @@ Number theory functions.
 import sys
 
 from functools import reduce
-from itertools import count
+from itertools import count, islice
 from math import sqrt, gcd
 from operator import mul
 
@@ -22,18 +22,18 @@ def is_prime(n):
     return True
 
 
-def primes_less_than(n):
+def primes_less_than(m):
     primes = []
-    for m in range(2,n):
+    for n in range(2,m):
         found_prime = True
         for p in primes:
-            if p*p > m:
+            if p*p > n:
                 break
-            if m % p == 0:
+            if n % p == 0:
                 found_prime = False
                 break
         if found_prime:
-            primes.append(m)
+            primes.append(n)
     return primes
 
 
@@ -53,6 +53,10 @@ def primes():
         if found_prime:
             primes.append(n)
             yield n
+
+
+def nth(seq, n):
+    return next(islice(seq, n-1, None))
 
 
 def even(n):
