@@ -60,3 +60,6 @@ pack xs = let (tail, grp) = (split_ xs []) in grp:(pack tail)
     split_ (xs@(y:ys)) gs@(g:_)
       | y==g = (split_ ys (gs ++ [y]))
       | otherwise = (xs, gs)
+
+rle :: Eq a => [a] -> [(a, Int)]
+rle xs = map (\(gs@(g:_)) -> (g, length gs)) (pack xs)
