@@ -61,5 +61,56 @@ pack xs = let (tail, grp) = (split_ xs []) in grp:(pack tail)
       | y==g = (split_ ys (gs ++ [y]))
       | otherwise = (xs, gs)
 
-rle :: Eq a => [a] -> [(a, Int)]
-rle xs = map (\(gs@(g:_)) -> (g, length gs)) (pack xs)
+-- 10.
+rlencode :: Eq a => [a] -> [(a, Int)]
+rlencode xs = map (\(gs@(g:_)) -> (g, length gs)) (pack xs)
+
+-- 12.
+rldecode :: Eq a => [(a, Int)] -> [a]
+rldecode [] = []
+rldecode ((x,n):xs) = (replicate n x) ++ (rleDecode xs)
+
+-- 14.
+dupli [] = []
+dupli (x:xs) = x:x:(dupli xs)
+
+-- 15.
+repli n [] = []
+repli n (x:xs) = (replicate n x) ++ (repli n xs)
+
+repli :: Int -> [a] -> [a]
+repli n xs = concatMap (replicate n) xs
+
+repli :: Int -> [a] -> [a]
+repli n xs = xs >>= replicate n
+
+-- 16.
+dropEveryKth k xs = dropEveryKth_ k 1 xs
+  where
+    dropEveryKth_ k i [] = []
+    dropEveryKth_ k i (x:xs) =
+      if (i `mod` k == 0)
+        then dropEveryKth_ k (i+1) xs
+        else x:(dropEveryKth_ k (i+1) xs)
+
+-- 17.
+split :: Int -> [a] -> ([a], [a])
+split n (x:xs) | n > 0 = (x:ys, zs)
+  where (ys, zs) = split (n-1) xs
+split _ xs = ([], xs)
+
+-- 18.
+slice :: Int -> Int -> [a] -> [a]
+slice _ _ [] = []
+slice i j (x:xs)
+  | i > 1 = slice (i-1) (j-1) xs
+  | j > 0 = x:(slice (i-1) (j-1) xs)
+  | otherwise = []
+
+-- 19.
+rotate :: Int -> [a] -> [a]
+rotate n xs
+  | n >= 0 = (drop m xs) ++ (take m xs)
+  | otherwise = rotate ((length xs)+m) xs
+    where
+      m = n `mod` (length xs)
