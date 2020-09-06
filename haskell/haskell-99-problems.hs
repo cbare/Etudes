@@ -114,3 +114,25 @@ rotate n xs
   | otherwise = rotate ((length xs)+m) xs
     where
       m = n `mod` (length xs)
+
+-- 20.
+removeAt :: Int -> [a] -> (Maybe a, [a])
+removeAt n xs = removeAt_ n xs
+  where
+    removeAt_ _ [] = (Nothing, [])
+    removeAt_ 0 (x:xs) = (Just x, xs)
+    removeAt_ n (x:xs) = (item, x:l)
+      where (item, l) = removeAt_ (n-1) xs
+
+-- 21.
+insertAt :: a -> Int -> [a] -> [a]
+insertAt x n xs = (take n xs) ++ [x] ++ (drop n xs)
+
+insertAt x n xs = ys ++ [x] ++ zs
+  where (ys, zs) = splitAt n xs
+
+-- 22.
+range :: Int -> Int -> [Int]
+range a b
+  | a <= b = a:(range (a+1) b)
+  | otherwise = []
