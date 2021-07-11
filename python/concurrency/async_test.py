@@ -8,7 +8,9 @@ from contexttimer import Timer
 
 async def lazy_worker(i):
     logging.info("Lazy worker %d taking a snooze...", i)
-    time.sleep(1)
+    # time.sleep is a blocking operation, so lazy workers sleep sequentially
+    # time.sleep(1)
+    await asyncio.sleep(1)
     logging.info("Lazy worker %d done.", i)
 
 
