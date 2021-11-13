@@ -1,7 +1,7 @@
 -- Compute letter distribution in a text file
 
 -- Examples:
---   runhaskell haskell/text_analysis.hs letter-counts--filepath /path/to/doc.txt
+--   runhaskell haskell/text_analysis.hs letter-counts --filepath /path/to/doc.txt
 --   runhaskell haskell/text_analysis.hs letter-frequency --filepath /path/to/doc.txt
 
 

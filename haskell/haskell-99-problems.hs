@@ -68,7 +68,7 @@ rlencode xs = map (\(gs@(g:_)) -> (g, length gs)) (pack xs)
 -- 12.
 rldecode :: Eq a => [(a, Int)] -> [a]
 rldecode [] = []
-rldecode ((x,n):xs) = (replicate n x) ++ (rleDecode xs)
+rldecode ((x,n):xs) = (replicate n x) ++ (rldecode xs)
 
 -- 14.
 dupli [] = []
@@ -136,3 +136,36 @@ range :: Int -> Int -> [Int]
 range a b
   | a <= b = a:(range (a+1) b)
   | otherwise = []
+
+-- 23.
+-- Sample randomly from a list with / without replacement.
+-- import System.Random (randomRIO)
+sample_with_replacement :: Int -> [a] -> IO [a]
+sample_with_replacement n xs =
+  do indexes <- (sequence . replicate n) $ randomRIO (0, (length xs)-1)
+     return (map (xs !!) indexes)
+
+-- I wanted to find a solution that showed off the separation
+-- of pure functions and side-effects. Couldn't pull it off, though.
+-- sample_without_replacement :: Int -> [a] -> [a]
+-- sample_without_replacement n xs = map (xs !!) indexes
+--   where
+--     indexes = (sequence . replicate 10) $ randomRIO (0, (length xs)-1) ??? >>= ??? (take n . unique)
+--     unique = nub
+
+-- sample_without_replacement :: Int -> [a] -> IO [a]
+-- sample_without_replacement n xs =
+--   do indexes <- (sequence . repeat) $ randomRIO (0, (length xs)-1)
+--      return (map (xs !!) ((take n . nub) indexes))
+
+-- 24.
+-- Sample randomly from a list without replacement.
+select 0 (x:xs) = Just x
+select i (x:xs) = select (i-1) xs
+select _ _ = Nothing
+
+sample_without_replacement :: Int -> [a] -> IO [a]
+sample_without_replacement 0 xs = []
+sample_without_replacement n xs = x:(sample_without_replacement (n-1) xs')
+  where
+    (x, xs') = select (randomRIO (0, (length xs)-1)) xs
