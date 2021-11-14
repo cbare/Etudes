@@ -4,6 +4,7 @@ Useful utility functions
 import os
 import re
 from collections.abc import Iterable
+from itertools import islice
 
 
 def flatten(xs):
@@ -76,3 +77,15 @@ def ensure_dir_exists(path: str) -> str:
 
 def exactly_one_of(*args):
     return sum(bool(arg) for arg in args) == 1
+
+
+def pairs_of(xs):
+    """
+    Iterate in pairs. If length of xs is odd, drop the last member.
+    """
+    for x, y in zip(islice(xs, 0, None, 2), islice(xs, 1, None, 2)):
+        yield x, y
+
+
+def comma_sep(xs):
+    return ", ".join(x for x in xs if x)
