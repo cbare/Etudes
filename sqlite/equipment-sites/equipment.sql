@@ -8,8 +8,10 @@ from
   join sites s on j.site_id = s.id
 order by
   eq.serial_no
+;
 
-
+-- first attempt that doesn't work when equipment leaves and returns
+-- to the same site.
 select
   eq.serial_no,
   s.name,
@@ -23,7 +25,19 @@ group by
   eq.serial_no, s.name
 order by
   eq.serial_no, start
+;
 
+
+-- Find time interval each piece of equipment spent at each work
+-- site. The trick here is the two window functions. We partition
+-- by equipment serial number and partition again by serial number
+-- and site name. Subtracting gives a group where consecutive rows
+-- for the same equipment and site will have the same group number.
+-- When the equipment changes site, it gets a new group number. The
+-- most tricky aspect is that when the equipment returns to a site
+-- previously visited, that gets a new group number as well. That's
+-- the difference between this technique and grouping by serial and
+-- site.
 with grouped_jobs as (
   select
     eq.serial_no,
@@ -51,3 +65,4 @@ group by
     serial_no, name, grp
 order by
     serial_no, start
+;

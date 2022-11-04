@@ -1,5 +1,18 @@
 """
 Equipment at sites. Fun with SQL.
+
+1. create tables:
+
+> sqlite3 data/equipment.sqlite.db < sqlite/equipment-sites/equipment_create_tables.sql
+
+2. add data:
+
+> python sqlite/equipment-sites/equipment_site.py
+
+3. run queries interactively:
+
+> sqlite3 data/equipment.sqlite.db
+
 """
 import datetime as dt
 import random
@@ -15,7 +28,7 @@ def timestamp_gen(start, end):
         )
 
 
-con = sqlite3.connect("./sqlite/data/equipment.sqlite.db")
+con = sqlite3.connect("./data/equipment.sqlite.db")
 
 sql = """
     insert into equipment
@@ -23,12 +36,12 @@ sql = """
     values
     (?, ?)
 """
-# cur = con.cursor()
-# cur.executemany(sql, [
-#     (((43*83+i*29*67*41) % 89999 + 10000), a)
-#     for i,a in zip(range(10), string.ascii_lowercase)
-# ])
-# con.commit()
+cur = con.cursor()
+cur.executemany(sql, [
+    (((43*83+i*29*67*41) % 89999 + 10000), a)
+    for i,a in zip(range(10), string.ascii_lowercase)
+])
+con.commit()
 
 sql = """
     insert into sites
@@ -36,11 +49,11 @@ sql = """
     values
     (?)
 """
-# cur = con.cursor()
-# cur.executemany(sql, [
-#     (f'site-{a}',) for a in string.ascii_uppercase[0:5]
-# ])
-# con.commit()
+cur = con.cursor()
+cur.executemany(sql, [
+    (f'site-{a}',) for a in string.ascii_uppercase[0:5]
+])
+con.commit()
 
 
 equipment_site = {
