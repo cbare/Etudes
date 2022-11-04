@@ -39,6 +39,10 @@ def threeSumByPartition(xs: List[int]) -> List[List[int]]:
     Solve 3sum by iterating over partitions of the additive inverse of each
     member of the list checking for the presence of a and b, the two parts
     of each partition.
+
+    Takes 2 passes through the list, the first builds the counter and the
+    second looks for solutions. It's O(n*m) where n is the length of the
+    list and m is x//2+1 where x is the size of elements in the list.
     """
     c = Counter(xs)
     solutions = set()
@@ -185,6 +189,7 @@ def test_threeSumByPartition():
     assert threeSumByPartition([0,0,0]) == [(0,0,0)]
     assert threeSumByPartition([3,0,-2,-1,1,2]) == [(-2,-1,3), (-2,0,2), (-1,0,1)]
     assert threeSumByPartition([-1,0,1,2,-1,-4]) == [(-1,-1,2), (-1,0,1)]
+    assert threeSumByPartition([-6, 1, 5, -7, 2]) == [(-7, 2, 5), (-6,1,5)]
 
 def test_threeSum():
     assert threeSum([0,0]) == []
@@ -200,3 +205,18 @@ def test_threeSumClosest():
 def test_fourSum():
     assert fourSum([-1,2,2,-5,0,-1,4], 3) == [(-5,2,2,4), (-1,0,2,2)]
     assert fourSum([1,0,-1,0,-2,2], 0) == [(-2,-1,1,2), (-2,0,0,2), (-1,0,0,1)]
+
+if __name__ == "__main__":
+    import types
+    tests = [
+        globals()[k] for k in globals().keys()
+        if k.startswith("test_") and type(globals()[k]) is types.FunctionType
+    ]
+    for test in tests:
+        print(f"{test.__name__:30}", end='')
+        try:
+            test()
+            result = "ok"
+        except AssertionError as ex:
+            result = f"failed! {ex}"
+        print(result)
