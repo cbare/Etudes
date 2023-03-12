@@ -222,8 +222,21 @@ for s in start1983:
     print(len(solutions))
 
 
-def gen_starts(n):
-    a = str(n)
-    k = 2**(len(a)-1)
-    for i in range(k,0,-1):
-        yield split_to_tuple(a,k-1)
+def string_partitions(s):
+    """
+    Maps a string of digits to a list of partitions as integers, for example:
+    "1964" -> [(1,9,6,4), (1,9,64), (1,96,4), (1,964), (19,6,4), (19,64), (196,4), (1964)]
+
+    The idea is that for each possible prefix, we recursively generate a partitioning of
+    the suffix. For each partition of the suffix, we get one partition by concatenating
+    the prefix and suffix partition.
+    """
+    if len(s) == 0:
+        return [()]
+    if len(s) == 1:
+        return [(int(s),)]
+    return [
+        (int(s[:i]),) + part
+        for i in range(1, len(s)+1)
+            for part in string_partitions(s[i:])
+    ]
