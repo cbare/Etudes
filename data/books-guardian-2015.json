@@ -1,0 +1,875 @@
+[
+  {
+    "ranking": 1,
+    "title": "The Pilgrim\u2019s Progress",
+    "authors": [
+      "John Bunyan"
+    ],
+    "year": "1678",
+    "description": "A story of a man in search of truth told with the simple clarity and beauty of Bunyan\u2019s prose make this the ultimate English classic."
+  },
+  {
+    "ranking": 2,
+    "title": "Robinson Crusoe",
+    "authors": [
+      "Daniel Defoe"
+    ],
+    "year": "1719",
+    "description": "By the end of the 19th century, no book in English literary history had enjoyed more editions, spin-offs and translations. Crusoe\u2019s world-famous novel is a complex literary confection, and it\u2019s irresistible."
+  },
+  {
+    "ranking": 3,
+    "title": "Gulliver\u2019s Travels",
+    "authors": [
+      "Jonathan Swift"
+    ],
+    "year": "1726",
+    "description": "A satirical masterpiece that\u2019s never been out of print, Jonathan Swift\u2019s Gulliver\u2019s Travels comes third in our list of the best novels written in English"
+  },
+  {
+    "ranking": 4,
+    "title": "Clarissa",
+    "authors": [
+      "Samuel Richardson"
+    ],
+    "year": "1748",
+    "description": "Clarissa is a tragic heroine, pressured by her unscrupulous nouveau-riche family to marry a wealthy man she detests, in the book that Samuel Johnson described as \u201cthe first book in the world for the knowledge it displays of the human heart.\u201d"
+  },
+  {
+    "ranking": 5,
+    "title": "Tom Jones",
+    "authors": [
+      "Henry Fielding"
+    ],
+    "year": "1749",
+    "description": "Tom Jones is a classic English novel that captures the spirit of its age and whose famous characters have come to represent Augustan society in all its loquacious, turbulent, comic variety."
+  },
+  {
+    "ranking": 6,
+    "title": "The Life and Opinions of Tristram Shandy, Gentleman",
+    "authors": [
+      "Laurence Sterne"
+    ],
+    "year": "1759",
+    "description": "Laurence Sterne\u2019s vivid novel caused delight and consternation when it first appeared and has lost little of its original bite."
+  },
+  {
+    "ranking": 7,
+    "title": "Emma",
+    "authors": [
+      "Jane Austen"
+    ],
+    "year": "1816",
+    "description": "Jane Austen\u2019s Emma is her masterpiece, mixing the sparkle of her early books with a deep sensibility."
+  },
+  {
+    "ranking": 8,
+    "title": "Frankenstein",
+    "authors": [
+      "Mary Shelley"
+    ],
+    "year": "1818",
+    "description": "Mary Shelley\u2019s first novel has been hailed as a masterpiece of horror and the macabre."
+  },
+  {
+    "ranking": 9,
+    "title": "Nightmare Abbey",
+    "authors": [
+      "Thomas Love Peacock"
+    ],
+    "year": "1818",
+    "description": "The great pleasure of Nightmare Abbey, which was inspired by Thomas Love Peacock\u2019s friendship with Shelley, lies in the delight the author takes in poking fun at the romantic movement."
+  },
+  {
+    "ranking": 10,
+    "title": "The Narrative of Arthur Gordon Pym of Nantucket",
+    "authors": [
+      "Edgar Allan Poe"
+    ],
+    "year": "1838",
+    "description": "Edgar Allan Poe\u2019s only novel \u2013 a classic adventure story with supernatural elements \u2013 has fascinated and influenced generations of writers."
+  },
+  {
+    "ranking": 11,
+    "title": "Sybil",
+    "authors": [
+      "Benjamin Disraeli"
+    ],
+    "year": "1845",
+    "description": "The future prime minister displayed flashes of brilliance that equalled the greatest Victorian novelists."
+  },
+  {
+    "ranking": 12,
+    "title": "Jane Eyre",
+    "authors": [
+      "Charlotte Bront\u00eb"
+    ],
+    "year": "1847",
+    "description": "Charlotte Bront\u00eb\u2019s erotic, gothic masterpiece became the sensation of Victorian England. Its great breakthrough was its intimate dialogue with the reader."
+  },
+  {
+    "ranking": 13,
+    "title": "Wuthering Heights",
+    "authors": [
+      "Emily Bront\u00eb"
+    ],
+    "year": "1847",
+    "description": "Emily Bront\u00eb\u2019s windswept masterpiece is notable not just for its wild beauty but for its daring reinvention of the novel form itself."
+  },
+  {
+    "ranking": 14,
+    "title": "Vanity Fair",
+    "authors": [
+      "William Thackeray"
+    ],
+    "year": "1848",
+    "description": "William Thackeray\u2019s masterpiece, set in Regency England, is a bravura performance by a writer at the top of his game."
+  },
+  {
+    "ranking": 15,
+    "title": "David Copperfield",
+    "authors": [
+      "Charles Dickens"
+    ],
+    "year": "1850",
+    "description": "David Copperfield marked the point at which Dickens became the great entertainer and also laid the foundations for his later, darker masterpieces."
+  },
+  {
+    "ranking": 16,
+    "title": "The Scarlet Letter",
+    "authors": [
+      "Nathaniel Hawthorne"
+    ],
+    "year": "1850",
+    "description": "Nathaniel Hawthorne\u2019s astounding book is full of intense symbolism and as haunting as anything by Edgar Allan Poe."
+  },
+  {
+    "ranking": 17,
+    "title": "Moby-Dick",
+    "authors": [
+      "Herman Melville"
+    ],
+    "year": "1851",
+    "description": "Wise, funny and gripping, Melville\u2019s epic work continues to cast a long shadow over American literature."
+  },
+  {
+    "ranking": 18,
+    "title": "Alice\u2019s Adventures in Wonderland",
+    "authors": [
+      "Lewis Carroll"
+    ],
+    "year": "1865",
+    "description": "Lewis Carroll\u2019s brilliant nonsense tale is one of the most influential and best loved in the English canon."
+  },
+  {
+    "ranking": 19,
+    "title": "The Moonstone",
+    "authors": [
+      "Wilkie Collins"
+    ],
+    "year": "1868",
+    "description": "Wilkie Collins\u2019s masterpiece, hailed by many as the greatest English detective novel, is a brilliant marriage of the sensational and the realistic."
+  },
+  {
+    "ranking": 22,
+    "title": "The Way We Live Now",
+    "authors": [
+      "Anthony Trollope"
+    ],
+    "year": "1875",
+    "description": "Inspired by the author\u2019s fury at the corrupt state of England, and dismissed by critics at the time, The Way We Live Now is recognised as Trollope\u2019s masterpiece."
+  },
+  {
+    "ranking": 24,
+    "title": "Kidnapped",
+    "authors": [
+      "Robert Louis Stevenson"
+    ],
+    "year": "1886",
+    "description": "A thrilling adventure story, gripping history and fascinating study of the Scottish character, Kidnapped has lost none of its power."
+  },
+  {
+    "ranking": 25,
+    "title": "Three Men in a Boat",
+    "authors": [
+      "Jerome K Jerome"
+    ],
+    "year": "1889",
+    "description": "Jerome K Jerome\u2019s accidental classic about messing about on the Thames remains a comic gem."
+  },
+  {
+    "ranking": 26,
+    "title": "The Sign of Four",
+    "authors": [
+      "Arthur Conan Doyle"
+    ],
+    "year": "1890",
+    "description": "Sherlock Holmes\u2019s second outing sees Conan Doyle\u2019s brilliant sleuth \u2013 and his bluff sidekick Watson \u2013 come into their own."
+  },
+  {
+    "ranking": 27,
+    "title": "The Picture of Dorian Gray",
+    "authors": [
+      "Oscar Wilde"
+    ],
+    "year": "1891",
+    "description": "Wilde\u2019s brilliantly allusive moral tale of youth, beauty and corruption was greeted with howls of protest on publication."
+  },
+  {
+    "ranking": 28,
+    "title": "New Grub Street",
+    "authors": [
+      "George Gissing"
+    ],
+    "year": "1891",
+    "description": "George Gissing\u2019s portrayal of the hard facts of a literary life remains as relevant today as it was in the late 19th century."
+  },
+  {
+    "ranking": 29,
+    "title": "Jude the Obscure",
+    "authors": [
+      "Thomas Hardy"
+    ],
+    "year": "1895",
+    "description": "Hardy exposed his deepest feelings in this bleak, angry novel and, stung by the hostile response, he never wrote another."
+  },
+  {
+    "ranking": 30,
+    "title": "The Red Badge of Courage",
+    "authors": [
+      "Stephen Crane"
+    ],
+    "year": "1895",
+    "description": "Stephen Crane\u2019s account of a young man\u2019s passage to manhood through soldiery is a blueprint for the great American war novel."
+  },
+  {
+    "ranking": 31,
+    "title": "Dracula",
+    "authors": [
+      "Bram Stoker"
+    ],
+    "year": "1897",
+    "description": "Bram Stoker\u2019s classic vampire story was very much of its time but still resonates more than a century later."
+  },
+  {
+    "ranking": 32,
+    "title": "Heart of Darkness",
+    "authors": [
+      "Joseph Conrad"
+    ],
+    "year": "1899",
+    "description": "Joseph Conrad\u2019s masterpiece about a life-changing journey in search of Mr Kurtz has the simplicity of great myth."
+  },
+  {
+    "ranking": 33,
+    "title": "Sister Carrie",
+    "authors": [
+      "Theodore Dreiser"
+    ],
+    "year": "1900",
+    "description": "Theodore Dreiser was no stylist, but there\u2019s a terrific momentum to his unflinching novel about a country girl\u2019s American dream."
+  },
+  {
+    "ranking": 34,
+    "title": "Kim",
+    "authors": [
+      "Rudyard Kipling"
+    ],
+    "year": "1901",
+    "description": "In Kipling\u2019s classic boy\u2019s own spy story, an orphan in British India must make a choice between east and west."
+  },
+  {
+    "ranking": 35,
+    "title": "The Call of the Wild",
+    "authors": [
+      "Jack London"
+    ],
+    "year": "1903",
+    "description": "Jack London\u2019s vivid adventures of a pet dog that goes back to nature reveal an extraordinary style and consummate storytelling."
+  },
+  {
+    "ranking": 36,
+    "title": "The Golden Bowl",
+    "authors": [
+      "Henry James"
+    ],
+    "year": "1904",
+    "description": "American literature contains nothing else quite like Henry James\u2019s amazing, labyrinthine and claustrophobic novel."
+  },
+  {
+    "ranking": 37,
+    "title": "Hadrian the Seventh",
+    "authors": [
+      "Frederick Rolfe"
+    ],
+    "year": "1904",
+    "description": "This entertaining if contrived story of a hack writer and priest who becomes pope sheds vivid light on its eccentric author \u2013 described by DH Lawrence as a \u201cman-demon\u201d."
+  },
+  {
+    "ranking": 38,
+    "title": "The Wind in the Willows",
+    "authors": [
+      "Kenneth Grahame"
+    ],
+    "year": "1908",
+    "description": "The evergreen tale from the riverbank and a powerful contribution to the mythology of Edwardian England."
+  },
+  {
+    "ranking": 39,
+    "title": "The History of Mr Polly",
+    "authors": [
+      "HG Wells"
+    ],
+    "year": "1910",
+    "description": "The choice is great, but Wells\u2019s ironic portrait of a man very like himself is the novel that stands out."
+  },
+  {
+    "ranking": 40,
+    "title": "Zuleika Dobson",
+    "authors": [
+      "Max Beerbohm"
+    ],
+    "year": "1911",
+    "description": "The passage of time has conferred a dark power upon Beerbohm\u2019s ostensibly light and witty Edwardian satire."
+  },
+  {
+    "ranking": 41,
+    "title": "The Good Soldier",
+    "authors": [
+      "Ford Madox Ford"
+    ],
+    "year": "1915",
+    "description": "Ford\u2019s masterpiece is a searing study of moral dissolution behind the facade of an English gentleman \u2013 and its stylistic influence lingers to this day."
+  },
+  {
+    "ranking": 42,
+    "title": "The Thirty-Nine Steps",
+    "authors": [
+      "John Buchan"
+    ],
+    "year": "1915",
+    "description": "John Buchan\u2019s espionage thriller, with its sparse, contemporary prose, is hard to put down."
+  },
+  {
+    "ranking": 43,
+    "title": "The Rainbow",
+    "authors": [
+      "DH Lawrence"
+    ],
+    "year": "1915",
+    "description": "The Rainbow is perhaps DH Lawrence\u2019s finest work, showing him for the radical, protean, thoroughly modern writer he was."
+  },
+  {
+    "ranking": 44,
+    "title": "Of Human Bondage",
+    "authors": [
+      "W Somerset Maugham"
+    ],
+    "year": "1915",
+    "description": "Somerset Maugham\u2019s semi-autobiographical novel shows the author\u2019s savage honesty and gift for storytelling at their best."
+  },
+  {
+    "ranking": 45,
+    "title": "The Age of Innocence",
+    "authors": [
+      "Edith Wharton"
+    ],
+    "year": "1920",
+    "description": "The story of a blighted New York marriage stands as a fierce indictment of a society estranged from culture."
+  },
+  {
+    "ranking": 46,
+    "title": "Ulysses",
+    "authors": [
+      "James Joyce"
+    ],
+    "year": "1922",
+    "description": "This portrait of a day in the lives of three Dubliners remains a towering work, in its word play surpassing even Shakespeare."
+  },
+  {
+    "ranking": 47,
+    "title": "Babbitt",
+    "authors": [
+      "Sinclair Lewis"
+    ],
+    "year": "1922",
+    "description": "What it lacks in structure and guile, this enthralling take on 20s America makes up for in vivid satire and characterisation."
+  },
+  {
+    "ranking": 48,
+    "title": "A Passage to India",
+    "authors": [
+      "EM Forster"
+    ],
+    "year": "1924",
+    "description": "EM Forster\u2019s most successful work is eerily prescient on the subject of empire."
+  },
+  {
+    "ranking": 49,
+    "title": "Gentlemen Prefer Blondes",
+    "authors": [
+      "Anita Loos"
+    ],
+    "year": "1925",
+    "description": "A guilty pleasure it may be, but it is impossible to overlook the enduring influence of a tale that helped to define the jazz age."
+  },
+  {
+    "ranking": 50,
+    "title": "Mrs Dalloway",
+    "authors": [
+      "Virginia Woolf"
+    ],
+    "year": "1925",
+    "description": "Woolf\u2019s great novel makes a day of party preparations the canvas for themes of lost love, life choices and mental illness."
+  },
+  {
+    "ranking": 51,
+    "title": "The Great Gatsby",
+    "authors": [
+      "F Scott Fitzgerald"
+    ],
+    "year": "1925",
+    "description": "Fitzgerald\u2019s jazz age masterpiece has become a tantalising metaphor for the eternal mystery of art."
+  },
+  {
+    "ranking": 52,
+    "title": "Lolly Willowes",
+    "authors": [
+      "Sylvia Townsend Warner"
+    ],
+    "year": "1926",
+    "description": "A young woman escapes convention by becoming a witch in this original satire about England after the first world war."
+  },
+  {
+    "ranking": 53,
+    "title": "The Sun Also Rises",
+    "authors": [
+      "Ernest Hemingway"
+    ],
+    "year": "1926",
+    "description": "Hemingway\u2019s first and best novel makes an escape to 1920s Spain to explore courage, cowardice and manly authenticity."
+  },
+  {
+    "ranking": 54,
+    "title": "The Maltese Falcon",
+    "authors": [
+      "Dashiell Hammett"
+    ],
+    "year": "1929",
+    "description": "Dashiell Hammett\u2019s crime thriller and its hard-boiled hero Sam Spade influenced everyone from Chandler to Le Carr\u00e9."
+  },
+  {
+    "ranking": 55,
+    "title": "As I Lay Dying",
+    "authors": [
+      "William Faulkner"
+    ],
+    "year": "1930",
+    "description": "The influence of William Faulkner\u2019s immersive tale of raw Mississippi rural life can be felt to this day."
+  },
+  {
+    "ranking": 56,
+    "title": "Brave New World",
+    "authors": [
+      "Aldous Huxley"
+    ],
+    "year": "1932",
+    "description": "Aldous Huxley\u2019s vision of a future human race controlled by global capitalism is every bit as prescient as Orwell\u2019s more famous dystopia."
+  },
+  {
+    "ranking": 57,
+    "title": "Cold Comfort Farm",
+    "authors": [
+      "Stella Gibbons"
+    ],
+    "year": "1932",
+    "description": "The book for which Gibbons is best remembered was a satire of late-Victorian pastoral fiction but went on to influence many subsequent generations."
+  },
+  {
+    "ranking": 58,
+    "title": "Nineteen Nineteen",
+    "authors": [
+      "John Dos Passos"
+    ],
+    "year": "1932",
+    "description": "The middle volume of John Dos Passos\u2019s USA trilogy is revolutionary in its intent, techniques and lasting impact."
+  },
+  {
+    "ranking": 59,
+    "title": "Tropic of Cancer",
+    "authors": [
+      "Henry Miller"
+    ],
+    "year": "1934",
+    "description": "The US novelist\u2019s debut revelled in a Paris underworld of seedy sex and changed the course of the novel \u2013 though not without a fight with the censors."
+  },
+  {
+    "ranking": 60,
+    "title": "Scoop",
+    "authors": [
+      "Evelyn Waugh"
+    ],
+    "year": "1938",
+    "description": "Evelyn Waugh\u2019s Fleet Street satire remains sharp, pertinent and memorable."
+  },
+  {
+    "ranking": 61,
+    "title": "Murphy",
+    "authors": [
+      "Samuel Beckett"
+    ],
+    "year": "1938",
+    "description": "Samuel Beckett\u2019s first published novel is an absurdist masterpiece, a showcase for his uniquely comic voice."
+  },
+  {
+    "ranking": 62,
+    "title": "The Big Sleep",
+    "authors": [
+      "Raymond Chandler"
+    ],
+    "year": "1939",
+    "description": "Raymond Chandler\u2019s hardboiled debut brings to life the seedy LA underworld \u2013 and Philip Marlowe, the archetypal fictional detective."
+  },
+  {
+    "ranking": 63,
+    "title": "Party Going",
+    "authors": [
+      "Henry Green"
+    ],
+    "year": "1939",
+    "description": "Set on the eve of war, this neglected modernist masterpiece centres on a group of bright young revellers delayed by fog."
+  },
+  {
+    "ranking": 64,
+    "title": "At Swim-Two-Birds",
+    "authors": [
+      "Flann O\u2019Brien"
+    ],
+    "year": "1939",
+    "description": "Labyrinthine and multilayered, Flann O\u2019Brien\u2019s humorous debut is both a reflection on, and an exemplar of, the Irish novel."
+  },
+  {
+    "ranking": 65,
+    "title": "The Grapes of Wrath",
+    "authors": [
+      "John Steinbeck"
+    ],
+    "year": "1939",
+    "description": "One of the greatest of great American novels, this study of a family torn apart by poverty and desperation in the Great Depression shocked US society."
+  },
+  {
+    "ranking": 66,
+    "title": "Joy in the Morning",
+    "authors": [
+      "PG Wodehouse"
+    ],
+    "year": "1946",
+    "description": "PG Wodehouse\u2019s elegiac Jeeves novel, written during his disastrous years in wartime Germany, remains his masterpiece."
+  },
+  {
+    "ranking": 67,
+    "title": "All the King\u2019s Men",
+    "authors": [
+      "Robert Penn Warren"
+    ],
+    "year": "1946",
+    "description": "A compelling story of personal and political corruption, set in the 1930s in the American south."
+  },
+  {
+    "ranking": 68,
+    "title": "Under the Volcano",
+    "authors": [
+      "Malcolm Lowry"
+    ],
+    "year": "1947",
+    "description": "Malcolm Lowry\u2019s masterpiece about the last hours of an alcoholic ex-diplomat in Mexico is set to the drumbeat of coming conflict."
+  },
+  {
+    "ranking": 69,
+    "title": "The Heat of the Day",
+    "authors": [
+      "Elizabeth Bowen"
+    ],
+    "year": "1948",
+    "description": "Elizabeth Bowen\u2019s 1948 novel perfectly captures the atmosphere of London during the blitz while providing brilliant insights into the human heart."
+  },
+  {
+    "ranking": 70,
+    "title": "Nineteen Eighty-Four",
+    "authors": [
+      "George Orwell"
+    ],
+    "year": "1949",
+    "description": "George Orwell\u2019s dystopian classic cost its author dear but is arguably the best-known novel in English of the 20th century."
+  },
+  {
+    "ranking": 71,
+    "title": "The End of the Affair",
+    "authors": [
+      "Graham Greene"
+    ],
+    "year": "1951",
+    "description": "Graham Greene\u2019s moving tale of adultery and its aftermath ties together several vital strands in his work."
+  },
+  {
+    "ranking": 72,
+    "title": "The Catcher in the Rye",
+    "authors": [
+      "JD Salinger"
+    ],
+    "year": "1951",
+    "description": "JD Salinger\u2019s study of teenage rebellion remains one of the most controversial and best-loved American novels of the 20th century."
+  },
+  {
+    "ranking": 73,
+    "title": "The Adventures of Augie March",
+    "authors": [
+      "Saul Bellow"
+    ],
+    "year": "1953",
+    "description": "In the long-running hunt to identify the great American novel, Saul Bellow\u2019s picaresque third book frequently hits the mark."
+  },
+  {
+    "ranking": 74,
+    "title": "Lord of the Flies",
+    "authors": [
+      "William Golding"
+    ],
+    "year": "1954",
+    "description": "Dismissed at first as \u201crubbish & dull\u201d, Golding\u2019s brilliantly observed dystopian desert island tale has since become a classic."
+  },
+  {
+    "ranking": 75,
+    "title": "Lolita",
+    "authors": [
+      "Vladimir Nabokov"
+    ],
+    "year": "1955",
+    "description": "Nabokov\u2019s tragicomic tour de force crosses the boundaries of good taste with glee."
+  },
+  {
+    "ranking": 76,
+    "title": "On the Road",
+    "authors": [
+      "Jack Kerouac"
+    ],
+    "year": "1957",
+    "description": "The creative history of Kerouac\u2019s beat-generation classic, fuelled by pea soup and benzedrine, has become as famous as the novel itself."
+  },
+  {
+    "ranking": 77,
+    "title": "Voss",
+    "authors": [
+      "Patrick White"
+    ],
+    "year": "1957",
+    "description": "A love story set against the disappearance of an explorer in the outback, Voss paved the way for a generation of Australian writers to shrug off the colonial past."
+  },
+  {
+    "ranking": 78,
+    "title": "To Kill a Mockingbird",
+    "authors": [
+      "Harper Lee"
+    ],
+    "year": "1960",
+    "description": "Her second novel finally arrived this summer, but Harper Lee\u2019s first did enough alone to secure her lasting fame, and remains a truly popular classic."
+  },
+  {
+    "ranking": 79,
+    "title": "The Prime of Miss Jean Brodie",
+    "authors": [
+      "Muriel Spark"
+    ],
+    "year": "1960",
+    "description": "Short and bittersweet, Muriel Spark\u2019s tale of the downfall of a Scottish schoolmistress is a masterpiece of narrative fiction."
+  },
+  {
+    "ranking": 80,
+    "title": "Catch-22",
+    "authors": [
+      "Joseph Heller"
+    ],
+    "year": "1961",
+    "description": "This acerbic anti-war novel was slow to fire the public imagination, but is rightly regarded as a groundbreaking critique of military madness."
+  },
+  {
+    "ranking": 81,
+    "title": "The Golden Notebook",
+    "authors": [
+      "Doris Lessing"
+    ],
+    "year": "1962",
+    "description": "Hailed as one of the key texts of the women\u2019s movement of the 1960s, this study of a divorced single mother\u2019s search for personal and political identity remains a defiant, ambitious tour de force."
+  },
+  {
+    "ranking": 82,
+    "title": "A Clockwork Orange",
+    "authors": [
+      "Anthony Burgess"
+    ],
+    "year": "1962",
+    "description": "Anthony Burgess\u2019s dystopian classic still continues to startle and provoke, refusing to be outshone by Stanley Kubrick\u2019s brilliant film adaptation."
+  },
+  {
+    "ranking": 83,
+    "title": "A Single Man",
+    "authors": [
+      "Christopher Isherwood"
+    ],
+    "year": "1964",
+    "description": "Christopher Isherwood\u2019s story of a gay Englishman struggling with bereavement in LA is a work of compressed brilliance."
+  },
+  {
+    "ranking": 84,
+    "title": "In Cold Blood",
+    "authors": [
+      "Truman Capote"
+    ],
+    "year": "1966",
+    "description": "Truman Capote\u2019s non-fiction novel, a true story of bloody murder in rural Kansas, opens a window on the dark underbelly of postwar America."
+  },
+  {
+    "ranking": 85,
+    "title": "The Bell Jar",
+    "authors": [
+      "Sylvia Plath"
+    ],
+    "year": "1966",
+    "description": "Sylvia Plath\u2019s painfully graphic roman \u00e0 clef, in which a woman struggles with her identity in the face of social pressure, is a key text of Anglo-American feminism."
+  },
+  {
+    "ranking": 86,
+    "title": "Portnoy\u2019s Complaint",
+    "authors": [
+      "Philip Roth"
+    ],
+    "year": "1969",
+    "description": "This wickedly funny novel about a young Jewish American\u2019s obsession with masturbation caused outrage on publication, but remains his most dazzling work."
+  },
+  {
+    "ranking": 87,
+    "title": "Mrs Palfrey at the Claremont",
+    "authors": [
+      "Elizabeth Taylor"
+    ],
+    "year": "1971",
+    "description": "Elizabeth Taylor\u2019s exquisitely drawn character study of eccentricity in old age is a sharp and witty portrait of genteel postwar English life facing the changes taking shape in the 60s."
+  },
+  {
+    "ranking": 88,
+    "title": "Rabbit Redux",
+    "authors": [
+      "John Updike"
+    ],
+    "year": "1971",
+    "description": "Harry \u201cRabbit\u201d Angstrom, Updike\u2019s lovably mediocre alter ego, is one of America\u2019s great literary protoganists, up there with Huck Finn and Jay Gatsby."
+  },
+  {
+    "ranking": 89,
+    "title": "Song of Solomon",
+    "authors": [
+      "Toni Morrison"
+    ],
+    "year": "1977",
+    "description": "The novel with which the Nobel prize-winning author established her name is a kaleidoscopic evocation of the African-American experience in the 20th century."
+  },
+  {
+    "ranking": 90,
+    "title": "A Bend in the River",
+    "authors": [
+      "VS Naipaul"
+    ],
+    "year": "1979",
+    "description": "VS Naipaul\u2019s hellish vision of an African nation\u2019s path to independence saw him accused of racism, but remains his masterpiece."
+  },
+  {
+    "ranking": 91,
+    "title": "Midnight\u2019s Children",
+    "authors": [
+      "Salman Rushdie"
+    ],
+    "year": "1981",
+    "description": "The personal and the historical merge in Salman Rushdie\u2019s dazzling, game-changing Indian English novel of a young man born at the very moment of Indian independence."
+  },
+  {
+    "ranking": 92,
+    "title": "Housekeeping",
+    "authors": [
+      "Marilynne Robinson"
+    ],
+    "year": "1981",
+    "description": "Marilynne Robinson\u2019s tale of orphaned sisters and their oddball aunt in a remote Idaho town is admired by everyone from Barack Obama to Bret Easton Ellis."
+  },
+  {
+    "ranking": 93,
+    "title": "Money: A Suicide Note",
+    "authors": [
+      "Martin Amis"
+    ],
+    "year": "1984",
+    "description": "Martin Amis\u2019s era-defining ode to excess unleashed one of literature\u2019s greatest modern monsters in self-destructive antihero John Self."
+  },
+  {
+    "ranking": 94,
+    "title": "An Artist of the Floating World",
+    "authors": [
+      "Kazuo Ishiguro"
+    ],
+    "year": "1986",
+    "description": "Kazuo Ishiguro\u2019s novel about a retired artist in postwar Japan, reflecting on his career during the country\u2019s dark years, is a tour de force of unreliable narration."
+  },
+  {
+    "ranking": 95,
+    "title": "The Beginning of Spring",
+    "authors": [
+      "Penelope Fitzgerald"
+    ],
+    "year": "1988",
+    "description": "Fitzgerald\u2019s story, set in Russia just before the Bolshevik revolution, is her masterpiece: a brilliant miniature whose peculiar magic almost defies analysis."
+  },
+  {
+    "ranking": 96,
+    "title": "Breathing Lessons",
+    "authors": [
+      "Anne Tyler"
+    ],
+    "year": "1988",
+    "description": "Anne Tyler\u2019s portrayal of a middle-aged, mid-American marriage displays her narrative clarity, comic timing and ear for American speech to perfection."
+  },
+  {
+    "ranking": 97,
+    "title": "Amongst Women",
+    "authors": [
+      "John McGahern"
+    ],
+    "year": "1990",
+    "description": "This modern Irish masterpiece is both a study of the faultlines of Irish patriarchy and an elegy for a lost world."
+  },
+  {
+    "ranking": 98,
+    "title": "Underworld",
+    "authors": [
+      "Don DeLillo"
+    ],
+    "year": "1997",
+    "description": "A writer of \u201cfrightening perception\u201d, Don DeLillo guides the reader in an epic journey through America\u2019s history and popular culture."
+  },
+  {
+    "ranking": 99,
+    "title": "Disgrace",
+    "authors": [
+      "JM Coetzee"
+    ],
+    "year": "1999",
+    "description": "In his Booker-winning masterpiece, Coetzee\u2019s intensely human vision infuses a fictional world that both invites and confounds political interpretation."
+  },
+  {
+    "ranking": 100,
+    "title": "True History of the Kelly Gang",
+    "authors": [
+      "Peter Carey"
+    ],
+    "year": "2000",
+    "description": "Peter Carey rounds off our list of literary milestones with a Booker prize-winning tour-de-force examining the life and times of Australia\u2019s infamous antihero, Ned Kelly."
+  }
+]
