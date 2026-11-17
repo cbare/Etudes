@@ -1,0 +1,902 @@
+[
+  {
+    "ranking": 1,
+    "title": "Middlemarch",
+    "authors": [
+      "George Eliot"
+    ],
+    "year": "1871",
+    "description": "A sweeping portrait of a provincial English town, centred on the idealistic Dorothea Brooke and her disastrous marriage, tracing how private ambitions collide with the constraints of society."
+  },
+  {
+    "ranking": 2,
+    "title": "Beloved",
+    "authors": [
+      "Toni Morrison"
+    ],
+    "year": "1987",
+    "description": "A woman who escaped slavery is haunted, literally, by the daughter she killed rather than see returned to bondage, in a novel about memory, trauma and the cost of freedom."
+  },
+  {
+    "ranking": 3,
+    "title": "Ulysses",
+    "authors": [
+      "James Joyce"
+    ],
+    "year": "1922",
+    "description": "A single Dublin day, 16 June 1904, follows Leopold Bloom and Stephen Dedalus in a modernist epic that reshaped what the novel could do with language and consciousness."
+  },
+  {
+    "ranking": 4,
+    "title": "To the Lighthouse",
+    "authors": [
+      "Virginia Woolf"
+    ],
+    "year": "1927",
+    "description": "The Ramsay family's summers on the Isle of Skye, split by the first world war, become a meditation on time, loss and the effort to make art from fleeting experience."
+  },
+  {
+    "ranking": 5,
+    "title": "In Search of Lost Time",
+    "authors": [
+      "Marcel Proust"
+    ],
+    "year": "1913-27",
+    "description": "A vast, multi-volume exploration of memory, desire, art and French society, set in motion by the taste of a madeleine dipped in tea."
+  },
+  {
+    "ranking": 6,
+    "title": "Anna Karenina",
+    "authors": [
+      "Leo Tolstoy"
+    ],
+    "year": "1878",
+    "description": "An aristocratic woman's affair with Count Vronsky destroys her place in Russian society, set against Levin's search for meaning on his country estate."
+  },
+  {
+    "ranking": 7,
+    "title": "War and Peace",
+    "authors": [
+      "Leo Tolstoy"
+    ],
+    "year": "1869",
+    "description": "Several aristocratic Russian families live through the Napoleonic wars in a panoramic novel that blends intimate drama with reflections on history."
+  },
+  {
+    "ranking": 8,
+    "title": "Jane Eyre",
+    "authors": [
+      "Charlotte Bront\u00eb"
+    ],
+    "year": "1847",
+    "description": "An orphaned governess with a fierce sense of self falls for her brooding employer, Mr Rochester, whose house conceals a terrible secret."
+  },
+  {
+    "ranking": 9,
+    "title": "Pride and Prejudice",
+    "authors": [
+      "Jane Austen"
+    ],
+    "year": "1813",
+    "description": "Elizabeth Bennet and Mr Darcy overcome first impressions and their own failings in a sharp comedy of manners about marriage, money and class."
+  },
+  {
+    "ranking": 10,
+    "title": "Madame Bovary",
+    "authors": [
+      "Gustave Flaubert"
+    ],
+    "year": "1856",
+    "description": "A doctor's wife in provincial Normandy, fed on romantic novels, seeks escape through affairs and debts in a landmark of realist fiction."
+  },
+  {
+    "ranking": 11,
+    "title": "The Great Gatsby",
+    "authors": [
+      "F Scott Fitzgerald"
+    ],
+    "year": "1925",
+    "description": "Narrator Nick Carraway watches his mysterious, wealthy neighbour pursue a lost love across a glittering, hollow Jazz Age Long Island."
+  },
+  {
+    "ranking": 12,
+    "title": "Bleak House",
+    "authors": [
+      "Charles Dickens"
+    ],
+    "year": "1852-3",
+    "description": "An endless inheritance suit in the Court of Chancery entangles dozens of lives in Dickens's sprawling satire of the law and Victorian society."
+  },
+  {
+    "ranking": 13,
+    "title": "Emma",
+    "authors": [
+      "Jane Austen"
+    ],
+    "year": "1815",
+    "description": "A clever, self-assured young woman meddles in her neighbours' romances while misreading her own heart."
+  },
+  {
+    "ranking": 14,
+    "title": "Mrs Dalloway",
+    "authors": [
+      "Virginia Woolf"
+    ],
+    "year": "1925",
+    "description": "One June day in London, as Clarissa Dalloway prepares for a party, her life is set alongside that of a shell-shocked veteran."
+  },
+  {
+    "ranking": 15,
+    "title": "Moby-Dick",
+    "authors": [
+      "Herman Melville"
+    ],
+    "year": "1851",
+    "description": "Captain Ahab's obsessive hunt for the white whale becomes a vast, digressive inquiry into nature, fate and the limits of knowledge."
+  },
+  {
+    "ranking": 16,
+    "title": "Nineteen Eighty-Four",
+    "authors": [
+      "George Orwell"
+    ],
+    "year": "1949",
+    "description": "Winston Smith rebels against a totalitarian state that controls truth, language and thought itself."
+  },
+  {
+    "ranking": 17,
+    "title": "One Hundred Years of Solitude",
+    "authors": [
+      "Gabriel Garc\u00eda M\u00e1rquez"
+    ],
+    "year": "1967",
+    "description": "Seven generations of the Buend\u00eda family rise and fall in the town of Macondo in the defining work of magical realism."
+  },
+  {
+    "ranking": 18,
+    "title": "Persuasion",
+    "authors": [
+      "Jane Austen"
+    ],
+    "year": "1817",
+    "description": "Years after being talked out of marrying a naval officer, Anne Elliot meets him again in Austen's most autumnal novel of second chances."
+  },
+  {
+    "ranking": 19,
+    "title": "The Life and Opinions of Tristram Shandy, Gentleman",
+    "authors": [
+      "Laurence Sterne"
+    ],
+    "year": "1759",
+    "description": "A narrator who can barely get himself born digresses endlessly in a playful, experimental comic novel centuries ahead of its time."
+  },
+  {
+    "ranking": 20,
+    "title": "Wuthering Heights",
+    "authors": [
+      "Emily Bront\u00eb"
+    ],
+    "year": "1847",
+    "description": "The destructive passion between Catherine Earnshaw and Heathcliff spreads across two generations on the Yorkshire moors."
+  },
+  {
+    "ranking": 21,
+    "title": "The Portrait of a Lady",
+    "authors": [
+      "Henry James"
+    ],
+    "year": "1881",
+    "description": "A spirited American heiress in Europe makes a fateful choice of husband, testing her belief in her own freedom."
+  },
+  {
+    "ranking": 22,
+    "title": "Things Fall Apart",
+    "authors": [
+      "Chinua Achebe"
+    ],
+    "year": "1958",
+    "description": "The proud Igbo warrior Okonkwo faces the arrival of British colonialism and Christian missionaries in late 19th-century Nigeria."
+  },
+  {
+    "ranking": 23,
+    "title": "Midnight's Children",
+    "authors": [
+      "Salman Rushdie"
+    ],
+    "year": "1981",
+    "description": "Born at the moment of Indian independence, Saleem Sinai finds his life magically bound to the fortunes of the new nation."
+  },
+  {
+    "ranking": 24,
+    "title": "The Remains of the Day",
+    "authors": [
+      "Kazuo Ishiguro"
+    ],
+    "year": "1989",
+    "description": "An English butler on a motoring trip looks back on his years of service and the loyalties that cost him love."
+  },
+  {
+    "ranking": 25,
+    "title": "Lolita",
+    "authors": [
+      "Vladimir Nabokov"
+    ],
+    "year": "1955",
+    "description": "A seductively eloquent narrator tries to justify his abuse of a 12-year-old girl, in a novel whose dazzling prose exposes his self-deception."
+  },
+  {
+    "ranking": 26,
+    "title": "Don Quixote",
+    "authors": [
+      "Miguel de Cervantes"
+    ],
+    "year": "1605/15",
+    "description": "A Spanish gentleman driven mad by chivalric romances sets out as a knight with his squire Sancho Panza, in what is often called the first modern novel."
+  },
+  {
+    "ranking": 27,
+    "title": "The Trial",
+    "authors": [
+      "Franz Kafka"
+    ],
+    "year": "1925",
+    "description": "Josef K is arrested by an unseen authority for an unnamed crime and drawn into a nightmarish, impenetrable legal system."
+  },
+  {
+    "ranking": 28,
+    "title": "The Brothers Karamazov",
+    "authors": [
+      "Fyodor Dostoevsky"
+    ],
+    "year": "1879-80",
+    "description": "The murder of a debauched father implicates his sons in a philosophical novel wrestling with faith, doubt and moral responsibility."
+  },
+  {
+    "ranking": 29,
+    "title": "Pale Fire",
+    "authors": [
+      "Vladimir Nabokov"
+    ],
+    "year": "1962",
+    "description": "A 999-line poem is hijacked by its deranged annotator, whose commentary tells a very different story, in a metafictional puzzle."
+  },
+  {
+    "ranking": 30,
+    "title": "Frankenstein",
+    "authors": [
+      "Mary Shelley"
+    ],
+    "year": "1818",
+    "description": "A young scientist creates a living being and then abandons it, with tragic consequences, in a founding text of science fiction."
+  },
+  {
+    "ranking": 31,
+    "title": "The Prime of Miss Jean Brodie",
+    "authors": [
+      "Muriel Spark"
+    ],
+    "year": "1961",
+    "description": "A charismatic Edinburgh teacher shapes a select group of girls in the 1930s, until one of them betrays her."
+  },
+  {
+    "ranking": 32,
+    "title": "The God of Small Things",
+    "authors": [
+      "Arundhati Roy"
+    ],
+    "year": "1997",
+    "description": "Twins in Kerala live through a family tragedy shaped by caste, forbidden love and the rules about who may be loved and how much."
+  },
+  {
+    "ranking": 33,
+    "title": "David Copperfield",
+    "authors": [
+      "Charles Dickens"
+    ],
+    "year": "1849-50",
+    "description": "Dickens's most autobiographical novel follows its hero from a hard childhood to maturity and a life as a writer."
+  },
+  {
+    "ranking": 34,
+    "title": "Wolf Hall",
+    "authors": [
+      "Hilary Mantel"
+    ],
+    "year": "2009",
+    "description": "Thomas Cromwell, a blacksmith's son, rises to become Henry VIII's indispensable fixer in the years of the king's break with Rome."
+  },
+  {
+    "ranking": 35,
+    "title": "Great Expectations",
+    "authors": [
+      "Charles Dickens"
+    ],
+    "year": "1861",
+    "description": "The orphan Pip receives a fortune from a mysterious benefactor and learns hard lessons about ambition, snobbery and loyalty."
+  },
+  {
+    "ranking": 36,
+    "title": "The Handmaid's Tale",
+    "authors": [
+      "Margaret Atwood"
+    ],
+    "year": "1985",
+    "description": "In a theocratic future America, women are stripped of their rights and a handmaid named Offred is forced to bear children for the elite."
+  },
+  {
+    "ranking": 37,
+    "title": "Invisible Man",
+    "authors": [
+      "Ralph Ellison"
+    ],
+    "year": "1952",
+    "description": "An unnamed Black narrator tells of his journey from the American south to Harlem, unseen by a society that refuses to recognise him."
+  },
+  {
+    "ranking": 38,
+    "title": "The Age of Innocence",
+    "authors": [
+      "Edith Wharton"
+    ],
+    "year": "1920",
+    "description": "A lawyer in 1870s New York high society is torn between his conventional fianc\u00e9e and her unconventional cousin."
+  },
+  {
+    "ranking": 39,
+    "title": "Their Eyes Were Watching God",
+    "authors": [
+      "Zora Neale Hurston"
+    ],
+    "year": "1937",
+    "description": "Janie Crawford tells of her three marriages and her search for independence and love in early 20th-century Florida."
+  },
+  {
+    "ranking": 40,
+    "title": "Song of Solomon",
+    "authors": [
+      "Toni Morrison"
+    ],
+    "year": "1977",
+    "description": "Milkman Dead's journey south to uncover his family history becomes a quest for identity and freedom."
+  },
+  {
+    "ranking": 41,
+    "title": "Heart of Darkness",
+    "authors": [
+      "Joseph Conrad"
+    ],
+    "year": "1899",
+    "description": "Marlow travels up the Congo river in search of the ivory trader Kurtz, confronting the brutality of European colonialism."
+  },
+  {
+    "ranking": 42,
+    "title": "The Magic Mountain",
+    "authors": [
+      "Thomas Mann"
+    ],
+    "year": "1924",
+    "description": "A young engineer's planned three-week visit to a Swiss sanatorium stretches to seven years in a novel of ideas on the eve of the first world war."
+  },
+  {
+    "ranking": 43,
+    "title": "Housekeeping",
+    "authors": [
+      "Marilynne Robinson"
+    ],
+    "year": "1980",
+    "description": "Two orphaned sisters in a remote Idaho town are raised by their eccentric, drifting aunt, and grow apart."
+  },
+  {
+    "ranking": 44,
+    "title": "Giovanni's Room",
+    "authors": [
+      "James Baldwin"
+    ],
+    "year": "1956",
+    "description": "An American in Paris is torn between his fianc\u00e9e and his love for an Italian barman."
+  },
+  {
+    "ranking": 45,
+    "title": "The Golden Notebook",
+    "authors": [
+      "Doris Lessing"
+    ],
+    "year": "1962",
+    "description": "A writer divides her life into four notebooks, covering politics, fiction, love and daily life, before trying to unify them in a fifth."
+  },
+  {
+    "ranking": 46,
+    "title": "The Leopard",
+    "authors": [
+      "Giuseppe Tomasi di Lampedusa"
+    ],
+    "year": "1958",
+    "description": "A Sicilian prince watches his aristocratic world fade as Italy is unified in the 1860s."
+  },
+  {
+    "ranking": 47,
+    "title": "Vanity Fair",
+    "authors": [
+      "William Makepeace Thackeray"
+    ],
+    "year": "1848",
+    "description": "The ruthless, charming Becky Sharp schemes her way up through English society during the Napoleonic era in this 'novel without a hero'."
+  },
+  {
+    "ranking": 48,
+    "title": "The Metamorphosis",
+    "authors": [
+      "Franz Kafka"
+    ],
+    "year": "1915",
+    "description": "Gregor Samsa wakes one morning transformed into a giant insect, to his family's horror and growing resentment."
+  },
+  {
+    "ranking": 49,
+    "title": "A Fine Balance",
+    "authors": [
+      "Rohinton Mistry"
+    ],
+    "year": "1995",
+    "description": "Four strangers are thrown together in a Bombay flat during India's Emergency of the mid-1970s."
+  },
+  {
+    "ranking": 50,
+    "title": "Wide Sargasso Sea",
+    "authors": [
+      "Jean Rhys"
+    ],
+    "year": "1966",
+    "description": "A prequel to Jane Eyre that tells the story of Rochester's first wife, a Creole heiress, from her youth in Jamaica."
+  },
+  {
+    "ranking": 51,
+    "title": "My Brilliant Friend",
+    "authors": [
+      "Elena Ferrante"
+    ],
+    "year": "2011",
+    "description": "The first of the Neapolitan novels traces the intense, competitive friendship between two girls growing up in a poor Naples neighbourhood."
+  },
+  {
+    "ranking": 52,
+    "title": "The Golden Bowl",
+    "authors": [
+      "Henry James"
+    ],
+    "year": "1904",
+    "description": "A wealthy American and his daughter marry into a web of hidden relationships, in James's dense late-period study of deception."
+  },
+  {
+    "ranking": 53,
+    "title": "The Transit of Venus",
+    "authors": [
+      "Shirley Hazzard"
+    ],
+    "year": "1980",
+    "description": "Two Australian sisters make lives in postwar England, in a richly patterned novel of love, fate and betrayal."
+  },
+  {
+    "ranking": 54,
+    "title": "Orlando",
+    "authors": [
+      "Virginia Woolf"
+    ],
+    "year": "1928",
+    "description": "A young Elizabethan nobleman lives for centuries and wakes one day as a woman, in Woolf's playful fantasy of gender and history."
+  },
+  {
+    "ranking": 55,
+    "title": "The Waves",
+    "authors": [
+      "Virginia Woolf"
+    ],
+    "year": "1931",
+    "description": "Six friends' lives from childhood to old age are rendered through poetic interior monologues."
+  },
+  {
+    "ranking": 56,
+    "title": "Mansfield Park",
+    "authors": [
+      "Jane Austen"
+    ],
+    "year": "1814",
+    "description": "Fanny Price, a poor relation raised by wealthy cousins, holds to her principles as the household is unsettled by worldly newcomers."
+  },
+  {
+    "ranking": 57,
+    "title": "The Sound and the Fury",
+    "authors": [
+      "William Faulkner"
+    ],
+    "year": "1929",
+    "description": "The decline of a southern family, the Compsons, is told through four perspectives, beginning with the fractured mind of Benjy."
+  },
+  {
+    "ranking": 58,
+    "title": "Disgrace",
+    "authors": [
+      "JM Coetzee"
+    ],
+    "year": "1999",
+    "description": "A disgraced Cape Town professor retreats to his daughter's farm, where violence forces a reckoning in post-apartheid South Africa."
+  },
+  {
+    "ranking": 59,
+    "title": "Never Let Me Go",
+    "authors": [
+      "Kazuo Ishiguro"
+    ],
+    "year": "2005",
+    "description": "Former pupils of an English boarding school slowly come to understand the purpose for which they were raised."
+  },
+  {
+    "ranking": 60,
+    "title": "Howards End",
+    "authors": [
+      "EM Forster"
+    ],
+    "year": "1910",
+    "description": "The intellectual Schlegel sisters and the commercial Wilcox family become entangled over a country house in Edwardian England."
+  },
+  {
+    "ranking": 61,
+    "title": "The Rings of Saturn",
+    "authors": [
+      "WG Sebald"
+    ],
+    "year": "1995",
+    "description": "A walking tour of the Suffolk coast unspools into meditations on history, destruction and memory, illustrated with grainy photographs."
+  },
+  {
+    "ranking": 62,
+    "title": "Half of a Yellow Sun",
+    "authors": [
+      "Chimamanda Ngozi Adichie"
+    ],
+    "year": "2006",
+    "description": "The Nigerian civil war and the short-lived state of Biafra are seen through the lives of a houseboy, a professor and twin sisters."
+  },
+  {
+    "ranking": 63,
+    "title": "White Teeth",
+    "authors": [
+      "Zadie Smith"
+    ],
+    "year": "2000",
+    "description": "Two wartime friends and their families navigate identity, religion and race in multicultural north-west London."
+  },
+  {
+    "ranking": 64,
+    "title": "The Good Soldier",
+    "authors": [
+      "Ford Madox Ford"
+    ],
+    "year": "1915",
+    "description": "An American narrator pieces together, unreliably, the betrayals within two couples he thought he knew."
+  },
+  {
+    "ranking": 65,
+    "title": "The Color Purple",
+    "authors": [
+      "Alice Walker"
+    ],
+    "year": "1982",
+    "description": "Celie, a poor Black woman in the rural American south, finds her voice through letters to God and her sister."
+  },
+  {
+    "ranking": 66,
+    "title": "The Master and Margarita",
+    "authors": [
+      "Mikhail Bulgakov"
+    ],
+    "year": "1966-67",
+    "description": "The devil visits Soviet Moscow, causing chaos, in a satirical fantasy interwoven with a story of Pontius Pilate."
+  },
+  {
+    "ranking": 67,
+    "title": "The Man Without Qualities",
+    "authors": [
+      "Robert Musil"
+    ],
+    "year": "1930-43",
+    "description": "Ulrich, a detached intellectual, observes Viennese society on the eve of the first world war in an unfinished novel of ideas."
+  },
+  {
+    "ranking": 68,
+    "title": "Blood Meridian",
+    "authors": [
+      "Cormac McCarthy"
+    ],
+    "year": "1985",
+    "description": "A teenage runaway joins a band of scalp hunters on the US-Mexico border in a violent, biblical western."
+  },
+  {
+    "ranking": 69,
+    "title": "Crime and Punishment",
+    "authors": [
+      "Fyodor Dostoevsky"
+    ],
+    "year": "1866",
+    "description": "An impoverished former student in St Petersburg commits murder to test a theory, then wrestles with guilt."
+  },
+  {
+    "ranking": 70,
+    "title": "Jude the Obscure",
+    "authors": [
+      "Thomas Hardy"
+    ],
+    "year": "1895",
+    "description": "A stonemason's hopes of a university education and a life with his cousin Sue are crushed by class and convention."
+  },
+  {
+    "ranking": 71,
+    "title": "Kindred",
+    "authors": [
+      "Octavia E Butler"
+    ],
+    "year": "1979",
+    "description": "A Black woman in 1970s California is repeatedly pulled back in time to a Maryland plantation before the Civil War."
+  },
+  {
+    "ranking": 72,
+    "title": "Our Mutual Friend",
+    "authors": [
+      "Charles Dickens"
+    ],
+    "year": "1864-5",
+    "description": "A fortune made from dust heaps and a body pulled from the Thames set off Dickens's last completed novel about money and identity."
+  },
+  {
+    "ranking": 73,
+    "title": "Austerlitz",
+    "authors": [
+      "WG Sebald"
+    ],
+    "year": "2001",
+    "description": "An architectural historian slowly recovers the story of how he was brought to Britain as a child on a Kindertransport."
+  },
+  {
+    "ranking": 74,
+    "title": "Nervous Conditions",
+    "authors": [
+      "Tsitsi Dangarembga"
+    ],
+    "year": "1988",
+    "description": "A girl in colonial Rhodesia gets the chance of a mission-school education after her brother's death."
+  },
+  {
+    "ranking": 75,
+    "title": "The Bluest Eye",
+    "authors": [
+      "Toni Morrison"
+    ],
+    "year": "1970",
+    "description": "An 11-year-old Black girl in Ohio longs for blue eyes, believing they would make her beautiful and loved."
+  },
+  {
+    "ranking": 76,
+    "title": "Dracula",
+    "authors": [
+      "Bram Stoker"
+    ],
+    "year": "1897",
+    "description": "A Transylvanian count comes to England, and a group led by Van Helsing sets out to destroy him, told through letters and diaries."
+  },
+  {
+    "ranking": 77,
+    "title": "The Rainbow",
+    "authors": [
+      "DH Lawrence"
+    ],
+    "year": "1915",
+    "description": "Three generations of the Brangwen family in the English Midlands search for fulfilment in love and work."
+  },
+  {
+    "ranking": 78,
+    "title": "A House for Mr Biswas",
+    "authors": [
+      "VS Naipaul"
+    ],
+    "year": "1961",
+    "description": "An Indo-Trinidadian man struggles throughout his life to own a house of his own and assert his independence."
+  },
+  {
+    "ranking": 79,
+    "title": "Go Tell It on the Mountain",
+    "authors": [
+      "James Baldwin"
+    ],
+    "year": "1953",
+    "description": "On his 14th birthday, a Harlem teenager confronts his relationship with his stepfather, a preacher, and with the church."
+  },
+  {
+    "ranking": 80,
+    "title": "Rebecca",
+    "authors": [
+      "Daphne du Maurier"
+    ],
+    "year": "1938",
+    "description": "A young second wife arrives at Manderley and finds herself overshadowed by the memory of her husband's first wife."
+  },
+  {
+    "ranking": 81,
+    "title": "Buddenbrooks",
+    "authors": [
+      "Thomas Mann"
+    ],
+    "year": "1901",
+    "description": "A wealthy merchant family in L\u00fcbeck declines over four generations."
+  },
+  {
+    "ranking": 82,
+    "title": "The End of the Affair",
+    "authors": [
+      "Graham Greene"
+    ],
+    "year": "1951",
+    "description": "A novelist investigates why his married lover abruptly ended their wartime affair, and finds a rival he didn't expect."
+  },
+  {
+    "ranking": 83,
+    "title": "A Farewell to Arms",
+    "authors": [
+      "Ernest Hemingway"
+    ],
+    "year": "1929",
+    "description": "An American ambulance driver on the Italian front falls in love with an English nurse during the first world war."
+  },
+  {
+    "ranking": 84,
+    "title": "The Talented Mr Ripley",
+    "authors": [
+      "Patricia Highsmith"
+    ],
+    "year": "1955",
+    "description": "Tom Ripley is sent to Italy to bring home a rich man's son and becomes dangerously drawn into his life."
+  },
+  {
+    "ranking": 85,
+    "title": "The Vegetarian",
+    "authors": [
+      "Han Kang"
+    ],
+    "year": "2007",
+    "description": "A Seoul woman's decision to stop eating meat provokes violent reactions from her family, told in three parts by those around her."
+  },
+  {
+    "ranking": 86,
+    "title": "The Turn of the Screw",
+    "authors": [
+      "Henry James"
+    ],
+    "year": "1898",
+    "description": "A governess at a remote English country house becomes convinced that the two children in her care are being haunted."
+  },
+  {
+    "ranking": 87,
+    "title": "The Line of Beauty",
+    "authors": [
+      "Alan Hollinghurst"
+    ],
+    "year": "2004",
+    "description": "A young gay man lodges with the family of a Tory MP during the Thatcher years and the onset of the Aids crisis."
+  },
+  {
+    "ranking": 88,
+    "title": "Ragtime",
+    "authors": [
+      "EL Doctorow"
+    ],
+    "year": "1975",
+    "description": "Three families' lives intersect with historical figures in early 20th-century New York."
+  },
+  {
+    "ranking": 89,
+    "title": "The Left Hand of Darkness",
+    "authors": [
+      "Ursula K Le Guin"
+    ],
+    "year": "1969",
+    "description": "An envoy to a frozen planet whose inhabitants have no fixed sex must learn to trust someone he does not understand."
+  },
+  {
+    "ranking": 90,
+    "title": "Jacob's Room",
+    "authors": [
+      "Virginia Woolf"
+    ],
+    "year": "1922",
+    "description": "A young man's life up to the first world war is pieced together from the impressions of those who knew him."
+  },
+  {
+    "ranking": 91,
+    "title": "Life and Fate",
+    "authors": [
+      "Vasily Grossman"
+    ],
+    "year": "1980",
+    "description": "A sprawling novel of the battle of Stalingrad that sets Nazi and Soviet totalitarianism side by side."
+  },
+  {
+    "ranking": 92,
+    "title": "Sentimental Education",
+    "authors": [
+      "Gustave Flaubert"
+    ],
+    "year": "1869",
+    "description": "A young man's long, unrequited love for an older married woman plays out against the 1848 revolution in Paris."
+  },
+  {
+    "ranking": 93,
+    "title": "Invisible Cities",
+    "authors": [
+      "Italo Calvino"
+    ],
+    "year": "1972",
+    "description": "Marco Polo describes a series of imaginary cities to Kublai Khan in a book of prose poems about memory and desire."
+  },
+  {
+    "ranking": 94,
+    "title": "The Known World",
+    "authors": [
+      "Edward P Jones"
+    ],
+    "year": "2003",
+    "description": "A formerly enslaved Black man in Virginia becomes a slaveholder himself, in a novel about the moral contradictions of slavery."
+  },
+  {
+    "ranking": 95,
+    "title": "The Return of the Native",
+    "authors": [
+      "Thomas Hardy"
+    ],
+    "year": "1878",
+    "description": "A man returns from Paris to the brooding Egdon Heath and marries the restless Eustacia Vye, with tragic results."
+  },
+  {
+    "ranking": 96,
+    "title": "Pedro P\u00e1ramo",
+    "authors": [
+      "Juan Rulfo"
+    ],
+    "year": "1955",
+    "description": "A man travels to the town of Comala to find his father and discovers it is full of ghosts."
+  },
+  {
+    "ranking": 97,
+    "title": "Catch-22",
+    "authors": [
+      "Joseph Heller"
+    ],
+    "year": "1961",
+    "description": "A US bombardier in the second world war tries to escape the absurd military logic that keeps him flying missions."
+  },
+  {
+    "ranking": 98,
+    "title": "The Road",
+    "authors": [
+      "Cormac McCarthy"
+    ],
+    "year": "2006",
+    "description": "A father and son travel through a burned, post-apocalyptic America."
+  },
+  {
+    "ranking": 99,
+    "title": "The Go-Between",
+    "authors": [
+      "LP Hartley"
+    ],
+    "year": "1953",
+    "description": "An elderly man remembers the summer of 1900 when, as a boy, he carried secret messages between two lovers."
+  },
+  {
+    "ranking": 100,
+    "title": "My \u00c1ntonia",
+    "authors": [
+      "Willa Cather"
+    ],
+    "year": "1918",
+    "description": "A man recalls growing up on the Nebraska prairie and his friendship with a Bohemian immigrant girl."
+  }
+]
